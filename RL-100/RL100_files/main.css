@@ -1209,7 +1209,7 @@ a:hover {
 }
 
 .task-column {
-    width: 45%; /* Adjusted from 45% to make videos larger */
+    width: 48%; /* Adjusted for two-column layout */
     max-width: 550px; /* Increased from 500px for larger videos */
 }
 
@@ -1251,8 +1251,8 @@ a:hover {
 
 
 .task-column-large {
-    width: 70.5%;
-    max-width: 2000px; /* Increased from 500px for larger videos */
+    width: 60%;
+    max-width: 1500px; /* Increased from 500px for larger videos */
 }
 
 .task-column-large h2 {
