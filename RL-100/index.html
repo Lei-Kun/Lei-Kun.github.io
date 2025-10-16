@@ -488,15 +488,16 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         <div class="header-links">
             <!-- <a href="#teaser">Cover</a> 
             <a href="#team">Team</a> -->
-            <a href="https://lei-kun.github.io//RL-100/#whole-body-manipulation">Whole-Body Manip</a>
-            <a href="https://lei-kun.github.io//RL-100/#legged-manipulation">Legged Manip</a>
-            <a href="https://lei-kun.github.io//RL-100/#locomotion">Locomotion</a>
-            <a href="https://lei-kun.github.io//RL-100/#expressive-motion">Expressive</a>
-            <a href="https://lei-kun.github.io//RL-100/#system">System</a>
-            <a href="https://lei-kun.github.io//RL-100/#finding">Findings</a>
-            <a href="https://lei-kun.github.io//RL-100/#failures">Failures</a>
-            <a href="https://lei-kun.github.io//RL-100/#q&amp;a">Q &amp; A</a>
-            <a href="https://lei-kun.github.io//RL-100/#related">Related</a>
+            <a href="https://lei-kun.github.io//RL-100/#100">100% success</a>
+            <a href="https://lei-kun.github.io//RL-100/#Robustness">Robustness</a>
+            <a href="https://lei-kun.github.io//RL-100/#Zero-shot-adaptation">Zero-shot</a>
+            <a href="https://lei-kun.github.io//RL-100/#Few-shot-adaptation">Few-shot</a>
+            <a href="https://lei-kun.github.io//RL-100/#Training-efficiency">Training efficiency</a>
+            <a href="https://lei-kun.github.io//RL-100/#Human-vs.-Robots">Human vs. Robots</a>
+            <a href="https://lei-kun.github.io//RL-100/#Execution-Efficiency">Execution Efficiency</a>
+            <a href="https://lei-kun.github.io//RL-100/#Easter-egg">Easter egg</a>
+            <a href="https://lei-kun.github.io//RL-100/#Ablation">Ablation</a>
+            <!-- <a href="https://lei-kun.github.io//RL-100/#Related-Work">Related Work</a> -->
         </div>
     </div>
 
@@ -505,7 +506,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         <div class="video_large_1 video_container">
             <div class="loading-spinner" style="display: none;"></div>
             <video id="teaserVideo" autoplay="" muted="" playsinline="">
-                <source id="teaserSource" src="RL100_files/our_tasks/single_compress.mp4" type="video/mp4">
+                <source id="teaserSource" src="RL100_files/our_tasks/teaser_video.mp4" type="video/mp4">
             </video>
         </div>
     </div>
@@ -515,12 +516,12 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         
         <!-- <h3><b>Disclaimer:</b> All videos are <b><a href="https://en.wikipedia.org/wiki/Teleoperation" style="color: white;">teleoperation</a></b></h3> -->
         <div class="button-container">
+            <a href="RL100_files/our_tasks/RL_100.pdf" target="_blank" class="button">
+                <i class="fas fa-file-pdf"></i> Paper
+            </a>
             <a href="" target="_blank" class="button">
                 <i class="fas fa-file-alt"></i> arXiv
             </a>
-            <!-- <a href="" target="_blank" class="button">
-                <i class="fas fa-file-pdf"></i> Paper
-            </a> -->
             <a href="" target="_blank" class="button">
                 <i class="fab fa-github"></i> Code
             </a>
@@ -920,7 +921,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         </div>
         
         <div class="team-member">
-            <a href="" target="_blank">
+            <a href="https://li-huanyu.github.io/" target="_blank">
                 <img src="./RL100_files/authors/huanyu.jpg" alt="Huanyu Li" loading="lazy">
                 <div class="member-name">Huanyu Li<sup>12*</sup></div>
             </a>
@@ -979,7 +980,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
     </div>
 
     <div class="affiliation-notes">
-        <p><sup>1</sup> Shanghai Qizhi Institute &nbsp;&nbsp;<sup>2</sup> Shanghai Jiaotong University &nbsp;&nbsp;<sup>3</sup> Tsinghua University, IIIS &nbsp;&nbsp;
+        <p><sup>1</sup> Shanghai Qizhi Institute &nbsp;&nbsp;<sup>2</sup> Shanghai Jiao Tong University &nbsp;&nbsp;<sup>3</sup> Tsinghua University, IIIS &nbsp;&nbsp;
         <p></p><sup>4</sup> The University of Hong Kong &nbsp;&nbsp;<sup>5</sup> University of North Carolina at Chapel Hill &nbsp;&nbsp;
         <p></p><sup>6</sup> Carnegie Mellon University &nbsp;&nbsp;<sup>7</sup> Chinese Academy of Sciences &nbsp;&nbsp;
         <p></p><sup>*</sup> Equal contribution &nbsp;
@@ -1005,8 +1006,8 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 
 <div id="overview">
 
-    <h1>Reliability, efficiency, and robustness for real-world deployment of robotic manipulation</h1>
-    <h1>100% success across seven tasks</h1>
+    <h1>Reliable, Efficient, and Robust Real-World Robotic Manipulation Deployment</h1>
+    <h1 id="100">100% success across seven tasks</h1>
     <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
     
     <!-- 第一行：Soft-towel Folding 和 Dynamic Unscrewing -->
@@ -1153,7 +1154,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
       </div>
   </div>
 
-  <h1>Robustness to physical disturbances</h1>
+  <h1 id="Robustness">Robustness to physical disturbances</h1>
   <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
   
   <!-- 第二行：Sustained counter-rotational interference -->
@@ -1231,472 +1232,357 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
   </div>
 </div>
 
-
-
-
-
-
-    <h1 id="legged-manipulation">Legged Manipulation</h1>
-    <div class="task-row">
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/kit5_box_with_kick_2x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Lift Box with Feet Kick</div>
+<h1 id="Zero-shot-adaptation">Zero-shot adaptation</h1>
+  <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
+  <!-- 第一行：Soft-towel Folding 和 Dynamic Unscrewing -->
+  <div class="task-row">
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube-nocookie.com/embed/rl_6X-373uQ?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Changed Surface (Dynamics)</div>
+              </div>
+          </div>
+      </div>
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube-nocookie.com/embed/nnF4KwDUlkQ?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Changed Surface (Dynamics)</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="task-row">
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube-nocookie.com/embed/OIsZez_17kA?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
                 </div>
-            </div>
-        </div>
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/kit9_large_kick_1x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Large Kick</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="task-row">
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/1_fly_kick_2x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Driven Shoot</div>
-                </div>
-            </div>
-        </div>
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/8_kick_multi_2x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Multiple Shoots</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="task-row">
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/15_kick_door_2x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Open Door with Feet</div>
-                </div>
-            </div>
-        </div>
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/16_kick_box_2x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Move Box with Feet</div>
-                </div>
+                <div class="overlay-clean">Different granular/fluid materials</div>
             </div>
         </div>
     </div>
-
-
-    <h1 id="locomotion">Locomotion</h1>
-    <div class="task-row">
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/13_sidewalk_2x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Side-Step Walk</div>
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube-nocookie.com/embed/6y7_lyRkeeY?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
                 </div>
-            </div>
-        </div>
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/11_backwalk_2x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Walk Backwards</div>
-                </div>
+                <div class="overlay-clean">Visual and physical interference objects</div>
             </div>
         </div>
     </div>
-    <div class="task-row">
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/10_avoid_table_2x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Side-Step Around Table</div>
+</div>
+
+<!-- 第二行：Sustained counter-rotational interference -->
+<div class="task-row">
+    <div class="task-column-large">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube-nocookie.com/embed/Iy4SCC2ZykA?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
                 </div>
-            </div>
-        </div>
-        <div class="task-column">
-            <div class="video_container_wrapper1">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/2x/7_crouch_and_sidewalk_2x.mp4" type="video/mp4">
-                    </video>
-                    <div class="overlay-clean">Crouch and Side-Step Across Hole</div>
-                </div>
+                <div class="overlay-clean">Different granular/fluid materials</div>
             </div>
         </div>
     </div>
+  </div>
+  
 
-    <hr class="rounded">
-    
-    <h1 id="system" style="padding-bottom: 2vw;">Teleoperated Whole-Body Imitation System</h1>
 
-    
+  <h1 id="Few-shot-adaptation">Few-shot adaptation</h1>
+  <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
+  <!-- 第一行：Soft-towel Folding 和 Dynamic Unscrewing -->
+  <div class="task-row">
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube-nocookie.com/embed/S_BcIR-FQSk?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Inverted pin arrangement</div>
+              </div>
+          </div>
+      </div>
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube-nocookie.com/embed/ELQrbOu4qaE?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Modified container shape</div>
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- 第二行：Sustained counter-rotational interference -->
+<div class="task-row">
+    <div class="task-column-large">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube-nocookie.com/embed/jy3WtZi6lKk?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="overlay-clean">Different towel material</div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <h1 id="Training-efficiency">Training efficiency</h1>
+  <div class="task-row">
+      <div class="task-column-large">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube-nocookie.com/embed/8u_52Ay8dOo?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">RL training curve for Bowling</div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <h1 id="Human-vs.-Robots">Human vs. Robots</h1>
     <div class="task-row">
         <div class="task-column-large">
-            <div class="video_container_wrapper1" style="box-shadow: none;">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/method/method_v4_animation.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    
-    
-
-    <h2 id="finding">Key Finding 1: RL+BC &gt;&gt; RL &gt;&gt; BC (DAgger)</h2>
-    <!-- <p>
-        <div class="math-formula">
-
-            $$ L(\pi_{stu}) = L_{\text{RL}}(\pi_{stu}) + \lambda D_{\text{KL}}(\pi_{stu} \parallel \pi_{tea}) $$
-        </div>
-    </p> -->
-    <p>
-        Unlike <a href="https://humanoid-ai.github.io/">HumanPlus</a>, which uses single-stage RL,
-        and <a href="https://omni.human2humanoid.com/">OmniH2O</a>, which employs DAgger,
-        we find that our combined pipeline, RL+BC, achieves superior tracking accuracy and motion smoothness.
-        Pure RL approaches frequently exhibit feet sliding artifacts due to their inability to anticipate future motion goals.
-        Meanwhile, DAgger can not stably and robustly track unseen motions occasionally, due to the lack of task reward guidance like RL.
-        In summary, while <a href="https://arxiv.org/abs/2501.17161">RL demonstrates better generalization than BC</a>, the combination of both approaches yields optimal performance.
-    </p>
-    <div id="video_grid_view" style="padding-top: 1vw; padding-bottom: 1vw">
-        <div class="row_label_view">DAagger</div>
-        <div class="video_wrapper videostyle_with_border">
-            <div class="video_container videostyle_with_border_failure">
-                <video class="content-video" muted="" playsinline="" preload="none" loop="" loading="lazy">
-                    <source src="videos/RL+BC/bc_unseen_short.mp4" type="video/mp4">
-                </video>
-                <div class="overlay">BC cannot handle unseen motions well.</div>
-            </div>
-        </div>
-        <div class="row_label_view">RL+BC</div>
-        <div class="video_wrapper videostyle_with_border">
-            <div class="video_container videostyle_with_border_success">
-                <video class="content-video" muted="" playsinline="" preload="none" loop="" loading="lazy">
-                    <source src="videos/RL+BC/bc+rl_unseen_short.mp4" type="video/mp4">
-                </video>
-                <div class="overlay">RL+BC generalizes better.</div>
-            </div>
-        </div>
-    </div>
-    <div id="video_grid_view" style="padding-bottom: 2vw">
-        <div class="row_label_view">RL</div>
-        <div class="video_wrapper videostyle_with_border">
-            <div class="video_container videostyle_with_border_failure">
-                <video class="content-video" muted="" playsinline="" preload="none" loop="" loading="lazy">
-                    <source src="videos/RL+BC/rl_short.mp4" type="video/mp4">
-                </video>
-                <div class="overlay">RL has feet slip.</div>
-            </div>
-        </div>
-        <div class="row_label_view">RL+BC</div>
-        <div class="video_wrapper videostyle_with_border">
-            <div class="video_container videostyle_with_border_success">
-                <video class="content-video" muted="" playsinline="" preload="none" loop="" loading="lazy">
-                    <source src="videos/RL+BC/rl+bc_short.mp4" type="video/mp4">
-                </video>
-                <div class="overlay">RL+BC is more smooth.</div>
-            </div>
-        </div>
-    </div>
-
-
-    <h2>Key Finding 2: In-House MoCap Data Matters</h2>
-    <p>
-        We find that adding even a small set of in-house MoCap sequences—retargeted online to mimic real teleoperation—substantially reduces tracking errors on unseen motions.
-        This gain arises from two factors: (1) our in-house captures are inherently noisier and less stable, suffering from calibration drift and occlusions; and (2) our online retargeter yields less-smooth reference motions compared to the offline version.
-
-    </p>
-    <div id="video_grid_view" style="padding-top: 1vw; padding-bottom: 2vw">
-        
-        <div class="row_label_view">w/o MoCap<br>Data</div>
-        <div class="video_wrapper videostyle_with_border">
-            <div class="video_container videostyle_with_border_failure">
-                <video class="content-video" muted="" playsinline="" preload="none" loop="" loading="lazy">
-                    <source src="videos/mocap_data/without_mocap.mp4" type="video/mp4">
-                </video>
-                <div class="overlay">w/o MoCap Data</div>
-            </div>
-        </div>
-        <div class="row_label_view">w/ MoCap<br>Data</div>
-        <div class="video_wrapper videostyle_with_border">
-            <div class="video_container videostyle_with_border_success">
-                <video class="content-video" muted="" playsinline="" preload="none" loop="" loading="lazy">
-                    <source src="videos/mocap_data/with_mocap.mp4" type="video/mp4">
-                </video>
-                <div class="overlay">w/ MoCap Data</div>
-            </div>
-        </div>
-    </div>
-    
-    
-
-    <h2>Key Finding 3: Learning to Apply Force</h2>
-    <p>
-        As the learning objective of the controller is simply motion tracking,
-        tasks requiring force exertion (<i>e.g.</i>, lifting a box) rather than reaching target positions represent out-of-distribution scenarios, causing the controller to occasionally produce jittering behaviors.
-        To enable the controller to learn to apply force, we propose to train controllers with large end-effector perturbations.
-
-    </p>
-
-    <div id="video_grid_view" style="padding-top: 1vw; padding-bottom: 2vw">
-        <div class="row_label_view">w/o EEF <br>Perturb</div>
-        <div class="video_wrapper videostyle_with_border">
-            <div class="video_container videostyle_with_border_failure">
-                <video class="content-video" muted="" playsinline="" preload="none" loop="" loading="lazy">
-                    <source src="videos/force/without_force2.mp4" type="video/mp4">
-                </video>
-                <div class="overlay">w/o EEF Perturb</div>
-            </div>
-        </div>
-        <div class="row_label_view">w/ EEF <br> Perturb</div>
-        <div class="video_wrapper videostyle_with_border">
-            <div class="video_container videostyle_with_border_success">
-                <video class="content-video" muted="" playsinline="" preload="none" loop="" loading="lazy">
-                    <source src="videos/force/with_force.mp4" type="video/mp4">
-                </video>
-                <div class="overlay">w/ EEF Perturb</div>
-            </div>
-        </div>
-    </div>
-
-    <h2>System Delay</h2>
-    <p>
-        The total teleoperation delay of our system is approximately 0.9 seconds, as measured by the video.
-        The major overhead arises from generating tracking goals (0.7 seconds), while policy inference remains efficient (0.2 seconds). Reducing this latency further will be a key focus in future improvements.
-
-    </p>
-    <div class="task-row">
-        <div class="task-column">
             <div class="video_container_wrapper1">
                 <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/delay/delay.mp4" type="video/mp4">
-                    </video>
+                    <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                    <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                        <iframe class="content-video"
+                                src="https://www.youtube-nocookie.com/embed/TlVighZW-I8?rel=0"
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy"></iframe>
+                    </div>
+                    <div class="overlay-clean">Robot vs. Human</div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="task-row">
+        <div class="task-column-large">
+            <div class="video_container_wrapper1">
+                <div class="video_container">
+                    <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                    <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                        <iframe class="content-video"
+                                src="https://www.youtube-nocookie.com/embed/myB1oUqiEOs?rel=0"
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy"></iframe>
+                    </div>
+                    <div class="overlay-clean">Robot vs. Human teleoperation</div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <h2 id="Execution-Efficiency">Execution Efficiency</h2>
+      <div class="task-row">
+          <div class="task-column-large">
+              <div class="image_container_wrapper">
+                  <div class="image_container">
+                      <img src="RL100_files/our_tasks/efficiency.png" alt="Execution Efficiency" style="width: 100%; height: auto; border-radius: 8px;">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
+        <strong>Takeaway:</strong>
+        <br>
+        1) Execution Efficiency: CM (RL) > DDIM (RL) > DP3 (IL) > DP (IL)
+        <br>
+        2) Single action vs. action chunking: single-step control mode is used when a fast closed-loop reaction is required
+        <br>
+        while action chunking is preferred for coordination-heavy or high precision tasks where smoothing mitigates jitter and limits error compounding.
+    </p>
+      <h1 id="Easter-egg">Easter egg</h1>
+      <div class="task-row">
+          <div class="task-column-large">
+              <div class="video_container_wrapper1">
+                  <div class="video_container">
+                      <!-- 本地视频播放器 -->
+                      <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                          <video class="content-video"
+                                  style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                  controls
+                                  preload="metadata"
+                                  loading="lazy">
+                              <source src="RL100_files/our_tasks/interesting_findings.mp4" type="video/mp4">
+                          </video>
+                      </div>
+                      <div class="overlay-clean">Easter egg</div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+    <h1 id="Ablation">Ablation</h1>
+    <!-- PDF展示区域 -->
+    <div class="pdf-container">
+        <div class="pdf-row">
+            <div class="pdf-column">
+                <div class="pdf-wrapper">
+                    <iframe src="/RL100_files/our_tasks/clip_door.pdf" 
+                            style="border: none;">
+                        <p><a href="/RL100_files/our_tasks/clip_door.pdf" target="_blank"></a>clip to download</p>
+                    </iframe>
+                    <div class="pdf-caption">Clip to variance</div>
+                </div>
+            </div>
+            <div class="pdf-column">
+                <div class="pdf-wrapper">
+                    <iframe src="RL100_files/our_tasks/reconvib-vs-no-vs-fix-encoder_door.pdf" 
+                            width="100%" 
+                            height="600px" 
+                            style="border: none;">
+                        <p><a href="RL100_files/our_tasks/reconvib-vs-no-vs-fix-encoder_door.pdf" target="_blank">clip to download</a>。</p>
+                    </iframe>
+                    <div class="pdf-caption">ReconvIB vs. No vs. Fix Encoder</div>
+                </div>
+            </div>
+        </div>
+        <div class="pdf-row">
+            <div class="pdf-column">
+                <div class="pdf-wrapper">
+                    <iframe src="RL100_files/our_tasks/cm-vs-ddim_door.pdf" 
+                            width="100%" 
+                            height="600px" 
+                            style="border: none;">
+                        <p><a href="RL100_files/our_tasks/cm-vs-ddim_door.pdf" target="_blank">clip to download</a>。</p>
+                    </iframe>
+                    <div class="pdf-caption">CM vs. DDIM</div>
+                </div>
+            </div>
+            <div class="pdf-column">
+                <div class="pdf-wrapper">
+                    <iframe src="RL100_files/our_tasks/2d-vs-3d_door.pdf" 
+                            width="100%" 
+                            height="600px" 
+                            style="border: none;">
+                        <p><a href="RL100_files/our_tasks/2d-vs-3d_door.pdf" target="_blank">clip to download</a>。</p>
+                    </iframe>
+                    <div class="pdf-caption">2d vs. 3d</div>
                 </div>
             </div>
         </div>
     </div>
-
-    <h2>TWIST is a General Framework for Diverse Embodiments</h2>
-    <p>
-        To demonstrate that TWIST functions as a general framework for diverse embodiments, we further evaluate it on Booster T1. Below we display the sim-to-sim evaluation results. The controller successfully tracks diverse motions, including arm swinging with coordinated whole-body joints, deeply crouching down, and walking.
-
-    </p>
-
-
-
-    <div class="task-row">
-        <div class="task-column-small">
-            <div class="video_container_wrapper1" style="box-shadow: none;">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/booster/arm.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-        <div class="task-column-small">
-            <div class="video_container_wrapper1" style="box-shadow: none;">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/booster/crouch.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-        <div class="task-column-small">
-            <div class="video_container_wrapper1" style="box-shadow: none;">
-                <div class="video_container">
-                    <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                        <source src="videos/booster/walk.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <h2 style="padding-bottom: 2vw;">For more details, please refer to our <a href="http://arxiv.org/abs/2505.02833">paper</a>.</h2>
-
-    <hr class="rounded">
-
-   
-
-    <h1 id="failures">Failures by Overheating</h1>
-    
-    
-    <div id="video_grid_ego" style="padding-top: 1vw; padding-bottom: 2vw">
-        <!-- 1 -->
-        <div class="video_wrapper">
-            <div class="video_container videostyle_with_border">
-                <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                    <source src="videos/failures/0.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <!-- 2 -->
-        <div class="video_wrapper">
-            <div class="video_container videostyle_with_border">
-                <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                    <source src="videos/failures/1.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <!-- 3 -->
-        <div class="video_wrapper">
-            <div class="video_container videostyle_with_border">
-                <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                    <source src="videos/failures/2.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <!-- 4 -->
-        <div class="video_wrapper">
-            <div class="video_container videostyle_with_border">
-                <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                    <source src="videos/failures/3.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <!-- 5 -->
-        <div class="video_wrapper">
-            <div class="video_container videostyle_with_border">
-                <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                    <source src="videos/failures/4.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <!-- 6 -->
-        <div class="video_wrapper">
-            <div class="video_container videostyle_with_border ">
-                <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                    <source src="videos/failures/5.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <!-- 7 -->
-        <div class="video_wrapper">
-            <div class="video_container videostyle_with_border">
-                <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                    <source src="videos/failures/6.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <!-- 8 -->
-        <div class="video_wrapper">
-            <div class="video_container videostyle_with_border">
-                <video class="content-video" muted="" playsinline="" preload="none" controls="">
-                    <source src="videos/failures/7.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-
-    </div>
-
-   
-    <br>
-
-    <hr class="rounded">
-
-    <h1 id="q&amp;a">Q &amp; A</h1>
-    <p>
-        <b>Q:</b> What is the limitation of TWIST?
+    <p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
+        <strong>Takeaway:</strong>
         <br>
-        <b>A:</b> 1) Visual occlusions when teleoperating; 2) no tactile feedback to know whether the robot is holding the object tightly; 3) overheating of the robot motors after 5-10 minutes of teleoperation (especially for tasks like crouching); 4) MoCap is not portable.
-    </p>
-    <p>
-        <b>Q:</b> Why is there no autonomous result?
+        1) Variance clipping is valid for stable exploration - variance clipping in the stochastic DDIM sampling process.
         <br>
-        <b>A:</b> We want to focus on building a strong whole-body teleoperation system first, as there is not such a system yet. We will study how to learn visuomotor policies next with our system.
-    </p>
-    <p>
-        <b>Q:</b> How do you pause and start the teleoperation (so that human can freely move)?
+        2) Reconstruction is crucial for visual robotic manipulation RL as it mitigates representational drift and improves sample efficiency.
         <br>
-        <b>A:</b> This is very essential in our real-world teleoperation. We let the teleoperator to hold a JoyStick to pause and start the teleoperation.
-    </p>
-    <p>
-        <b>Q:</b> Is there other interesting note in system design?
-        <br>
-        <b>A:</b> Adding a voice reminder in the system is quite helpful.
-    </p>
-    <p>
-        For more questions, please contact <a href="https://lei-kun.github.io//">Yanjie Ze</a>; we will update this section accordingly.
+        3) CM effectively compresses the iterative denoising process without sacrificing control quality, enabling high-frequency deployment.
+        <br>    
+        4) On a relatively clean scene - the 3D variant learns faster and attains a higher final success rate.
     </p>
 
     <hr class="rounded">
 
-    <h1 id="related">Related Work</h1>
-
+    <h1 id="Related-Work">Related Work</h1>
     <div class="related-paper">
-        <div class="related-paper-image">
-            <img src="./RL100_files/idp3_2.gif" alt="Paper 1 Thumbnail">
-        </div>
         <div class="related-paper-content">
             <div class="related-paper-title">
-                <a href="https://humanoid-manipulation.github.io/" target="_blank">Generalizable Humanoid Manipulation with 3D Diffusion Policies</a>
+                <a href="https://humanoid-manipulation.github.io/" target="_blank">Uni-O4: Unifying Online and Offline Deep Reinforcement Learning with Multi-Step On-Policy Optimization</a>
             </div>
-            <div class="related-paper-authors">Kun Lei, Huanyu Li, Dongjie Yu, Zhenyu Wei, Lingxiao Guo, Zhennan Jiang, Ziyu Wang, Shiyu Liang, Huazhe Xu</div>
+            <div class="related-paper-authors">Kun Lei</strong>, Zhengmao He*, Chenhao Lu*, Kaizhe Hu, Yang Gao, Huazhe Xu.</div>
             <div class="related-paper-links">
-                <a href="https://arxiv.org/abs/2410.10803" target="_blank">arXiv</a> /
-                <a href="https://humanoid-manipulation.github.io/" target="_blank">Project Page</a> /
-                <a href="https://github.com/YanjieZe/Improved-3D-Diffusion-Policy" target="_blank">Code (learning)</a> /
-                <a href="https://github.com/YanjieZe/Humanoid-Teleoperation" target="_blank">Code (teleop)</a>
+                <a href="https://arxiv.org/abs/2311.03351" target="_blank">arXiv</a> /
+                <a href="https://lei-kun.github.io/uni-o4/" target="_blank">Project Page</a> /
+                <a href="https://github.com/Lei-Kun/Uni-o4" target="_blank">Code</a> /
+                <a href="https://twitter.com/kunlei15/status/1721885793369964703" target="_blank">Twitter</a>
             </div>
         </div>
     </div>
 
-
+    <br>
 
     <h1 id="acknowledgements">Acknowledgements</h1>
     <p>
-        We would like to thank all members of the CogAI group and The Movement Lab from Stanford University for their support, Sirui (Eric) Chen for his help with the video shooting and real-world experiments, and Haoyu Xiong for his helpful discussions. We also thank Stanford Robotics Center for providing the experiment space and the MoCap devices.
-        
-        This work is in part supported by ONR MURI N00014-24-1-2748, NSF:FRR 2153854, Stanford HAI, and Stanford Wu-Tsai Human Performance Alliance.
+        We would like to thank all members of the RL-100 Team and The TEA Lab from Tsinghua University for their support.
     </p>
 
-    <h1>BibTeX</h1>
+    <!-- <h1>BibTeX</h1>
     <p class="bibtex">@article{ze2025twist,<br>
         title={TWIST: Teleoperated Whole-Body Imitation System},<br>
         author= {Yanjie Ze and Zixuan Chen and João Pedro Araújo and Zi-ang Cao and Xue Bin Peng and Jiajun Wu and C. Karen Liu},<br>
         year= {2025},<br>
         journal= {arXiv preprint arXiv:2505.02833}<br>
         }
-    </p>
+    </p> -->
 
 
     <!-- 中间 -->
     <p style="text-align: center;">
-        Website modified from <a href="https://3d-diffusion-policy.github.io/">DP3</a> and <a href="https://humanoid-manipulation.github.io/">iDP3</a>.
+        Website modified from <a href="https://yanjieze.com/TWIST/">TWIST</a>.
         <br>
-        @ 2025 <a href="https://lei-kun.github.io//">Yanjie Ze</a>
+        @ 2025 <a href="https://lei-kun.github.io/">Kun Lei</a>
         <br>
         <br>
 
@@ -1744,7 +1630,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 
     // List of video sources
     const videoSources = [
-        'RL100_files/our_tasks/single_compress.mp4'
+        'RL100_files/our_tasks/teaser_video.mp4'
     ];
 
     // Function to get random video source

@@ -1559,4 +1559,163 @@ a:hover {
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+/* PDF展示样式 */
+.pdf-container {
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.pdf-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.pdf-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.pdf-wrapper {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pdf-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.pdf-wrapper iframe {
+    border-radius: 4px;
+    background: white;
+    width: 100%;
+    height: 280px; /* 进一步减少高度 */
+    border: none;
+    display: block;
+    object-fit: contain; /* 确保内容适应容器 */
+}
+
+.pdf-caption {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* 图片容器样式 */
+.image_container_wrapper {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image_container {
+    text-align: center;
+}
+
+.image_container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Related Work样式 */
+#related {
+    text-align: center;
+    color: #2E2D29;
+    font-family: "Source Serif 4", serif;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+
+.related-work-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #2E2D29;
+}
+
+.related-work-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3em;
+    color: #2E2D29;
+    font-family: "Source Serif 4", serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.4;
+}
+
+.related-work-item h3 a {
+    color: #2E2D29;
+    text-decoration: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.related-work-item h3 a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+.related-work-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.related-work-item strong {
+    font-weight: bold;
+    color: #2E2D29;
+}
+
+.related-work-item em {
+    font-style: italic;
+    color: #666;
+}
+
+.related-work-item a {
+    color: #2E2D29;
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+.related-work-item a:hover {
+    text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .pdf-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .pdf-column {
+        min-width: auto;
+    }
+    
+    .pdf-wrapper iframe {
+        height: 250px; /* 移动端更小的高度 */
+    }
+    
+    .related-work-item {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .related-work-item h3 {
+        font-size: 1.1em;
+    }
+}
+
 
