@@ -555,7 +555,27 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         <div class="author-name"><a href="https://jiajunwu.com/" target="_blank">Jiajun Wu<sup>†</sup></a></div>
         <div class="author-name"><a href="https://tml.stanford.edu/" target="_blank">C. Karen Liu<sup>†</sup></a></div>
     </div> -->
-
+    <h2 id="demo2duty">From demo to duty: RL-100 can serve continuously for ~7 hours—reliable, real-world robot helps.</h2>
+    <div class="task-row">
+      <div class="task-column-large">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 本地视频播放器 -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <video class="content-video"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              controls
+                              preload="metadata"
+                              loading="lazy">
+                          <source src="RL100_files/our_tasks/outdoor.mp4" type="video/mp4">
+                      </video>
+                  </div>
+                  <div class="overlay-clean"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <h1 id="100">Main video</h1>
     <div id="abstract">
         <div class="video_container">
             <div class="publication-video">
@@ -1532,6 +1552,17 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
             </div>
         </div>
     </div>
+    <div class="pdf-column">
+      <div class="pdf-wrapper">
+          <iframe src="RL100_files/our_tasks/2d-vs-3d_door.pdf" 
+                  width="100%" 
+                  height="600px" 
+                  style="border: none;">
+              <p><a href="RL100_files/our_tasks/epsilon-vs-sample_door.pdf" target="_blank">clip to download</a>。</p>
+          </iframe>
+          <div class="pdf-caption">Predict type: epsilon vs. sample</div>
+      </div>
+    </div>
     <p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
         <strong>Takeaway:</strong>
         <br>
@@ -1542,6 +1573,8 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         3) CM effectively compresses the iterative denoising process without sacrificing control quality, enabling high-frequency deployment.
         <br>    
         4) On a relatively clean scene - the 3D variant learns faster and attains a higher final success rate.
+        <br>
+        5) Epsilon prediction is more suitable for RL: large noise schedule for exploration.
     </p>
     <h1 id="Thought">Thought</h1>
     <div class="task-row">
@@ -1644,7 +1677,8 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 
     // List of video sources
     const videoSources = [
-        'RL100_files/our_tasks/teaser_video.mp4'
+        'RL100_files/our_tasks/teaser_video.mp4',
+        'RL100_files/our_tasks/outdoor.mp4'
     ];
 
     // Function to get random video source
