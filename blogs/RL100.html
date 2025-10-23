@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The era of robots surpassing human capabilities is coming</title>
+  <meta name="description" content="RL-100: A three‑stage real‑robot reinforcement learning framework that achieves near‑perfect success rates with high efficiency and robustness." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a; /* slate-900 */
+      --muted: #475569; /* slate-600 */
+      --accent: #2563eb; /* blue-600 */
+      --card: #f8fafc; /* slate-50 */
+      --border: #e2e8f0; /* slate-200 */
+      --code-bg: #0b1020; /* deep indigo */
+      --code-fg: #e6edf3;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;
+        --fg: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --card: #0f172a;
+        --border: #1f2937;
+        --code-bg: #0b1020;
+        --code-fg: #e6edf3;
+      }
+    }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .rl100-container { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    header.rl100-hero { margin-bottom: 24px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-weight: 600; color: var(--accent); font-size: 12px; }
+    h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 8px 0 10px; }
+    .subtitle { color: var(--muted); font-size: clamp(14px, 2.2vw, 18px); }
+
+    /* TOC */
+    nav.rl100-toc { margin: 28px 0 36px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 18px 6px; }
+    nav.rl100-toc strong { display: block; margin-bottom: 10px; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    nav.rl100-toc ul { margin: 0; padding: 0 0 10px 18px; columns: 2; column-gap: 28px; }
+    nav.rl100-toc li { margin: 6px 0; }
+    nav.rl100-toc a { color: var(--fg); text-decoration: none; border-bottom: 1px solid transparent; }
+    nav.rl100-toc a:hover { color: var(--accent); border-color: var(--accent); }
+    @media (max-width: 720px) { nav.rl100-toc ul { columns: 1; } }
+
+    /* Content */
+    section { margin: 40px 0; }
+    h2 { font-size: clamp(22px, 3vw, 30px); line-height: 1.2; margin: 0 0 12px; }
+    h3 { font-size: clamp(18px, 2.2vw, 22px); margin: 20px 0 8px; }
+    p, li { font-size: 16px; line-height: 1.75; }
+    .muted { color: var(--muted); }
+
+    .callout { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+    .kicker { font-weight: 600; color: var(--accent); margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; }
+
+    /* Figures */
+    figure { margin: 20px 0; background: var(--card); border: 1px dashed var(--border); border-radius: 12px; padding: 10px; }
+    figure img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+    figure figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+
+    /* Cards / lists */
+    .key-takeaways { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .key-takeaways li { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; }
+    @media (max-width: 720px) { .key-takeaways { grid-template-columns: 1fr; } }
+
+    /* Footer */
+    .links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--fg); text-decoration: none; font-weight: 600; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Small helpers */
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .center { text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="rl100-container">
+    <header class="rl100-hero">
+      <div class="eyebrow">Real‑World Reinforcement Learning</div>
+      <h1>Beyond Human Capability: The Robotic Era</h1>
+      <!-- <p class="subtitle">A three‑stage framework from imitation to iterative offline and last‑mile online RL that achieves near‑perfect success with high efficiency and robustness. Project completed at Tsinghua University’s TEA Lab under the guidance of <strong>Prof. Huazhe (Harry) Xu</strong>.</p> -->
+    </header>
+
+    <nav class="rl100-toc" aria-label="Table of contents">
+      <strong>On this page</strong>
+      <ul>
+        <li><a href="#foreword">Foreword</a></li>
+        <li><a href="#il-ceiling">Imitation Learning: Strengths and Ceiling</a></li>
+        <li><a href="#hitl">HITL Augmentation: Gains and Limits</a></li>
+        <li><a href="#why-rl">Why RL—and What Blocks It</a></li>
+        <li><a href="#learning-like-humans">RL‑100: Learning Like Humans</a></li>
+        <li><a href="#framework">RL‑100 Algorithmic Framework</a></li>
+        <li><a href="#key-modules">Key Modules — Takeaways</a></li>
+        <li><a href="#experiments">Experiments</a></li>
+        <li><a href="#outlook">Outlook</a></li>
+        <li><a href="#links">Project & Paper</a></li>
+      </ul>
+    </nav>
+
+    <section id="foreword">
+      <h2>Foreword</h2>
+      <p>The wave of embodied intelligence is sweeping the globe, reaching unprecedented visibility across academia and industry. Startups are springing up everywhere, converging on a shared vision—bringing AGI into the physical world. In this “first year of embodiment,” we focus on one core topic: <strong>deployment</strong>. We also introduce our latest result in real‑robot reinforcement learning—<strong>RL‑100</strong></strong>.</p>
+      <p>We see dazzling robot demos every day—parkour, backflips, dancing, boxing. Impressive, yes—but what kind of robots do we <em>actually</em> need? We look forward to the day a robot can do laundry, make breakfast, and act as a reliable daily assistant. To reach that vision, we prioritize <strong>deployability metrics</strong>—<strong>reliability, efficiency, and robustness</strong>. No one wants a helper that breaks three plates while doing dishes or needs five hours to cook a meal. These metrics motivate this work and serve as our evaluation yardsticks.</p>
+      <figure>
+        <!-- Replace src with your workflow diagram URL -->
+        <img src="./RL100_files/deployment.png" alt="The demands of real-world deployment" />
+        <figcaption>The demands of real-world deployment.</figcaption>
+      </figure>
+      <p>Reinforcement learning has dazzled the world in milestones like AlphaGo and GPT. Yet the refrain—“<span class="mono">RL is nothing for robotics</span>”—persists. Why? In games or language, data is abundant (massive simulation, web text). In robotics, <strong>real‑world data is expensive</strong> and <strong>sim‑to‑real gaps</strong> are severe (dynamics, sensing—vision, touch). A data‑hungry method like RL struggles without careful system design.</p>
+      <p>Below, we outline the pros/cons of <strong>Imitation Learning (IL)</strong>, <strong>Human‑in‑the‑Loop (HITL) augmentation</strong>, and <strong>Reinforcement Learning (RL)</strong>—and how to combine them.</p>
+    </section>
+
+    <!-- <section id="deployment">
+      <h2>What Real‑World Deployment Demands</h2>
+      <p>Reinforcement learning has dazzled the world in milestones like AlphaGo and GPT. Yet the refrain—“<span class="mono">RL is nothing for robotics</span>”—persists. Why? In games or language, data is abundant (massive simulation, web text). In robotics, <strong>real‑world data is expensive</strong> and <strong>sim‑to‑real gaps</strong> are severe (dynamics, sensing—vision, touch). A data‑hungry method like RL struggles without careful system design.</p>
+      <p>Below, we outline the pros/cons of <strong>Imitation Learning (IL)</strong>, <strong>Human‑in‑the‑Loop (HITL) augmentation</strong>, and <strong>Reinforcement Learning (RL)</strong>—and how to combine them.</p>
+    </section> -->
+
+    <section id="il-ceiling">
+      <h3>Imitation Learning: Strengths and Ceiling</h3>
+      <p>Learning from <em>smart human priors</em> speeds up robot onboarding. But high‑quality real data is scarce:</p>
+      <ul>
+        <li><strong>Teleop bias:</strong> Sensing/control latency encourages slow, conservative motions and suboptimal trajectories.</li>
+        <li><strong>High collection cost:</strong> Large datasets need skilled operators—labor‑intensive and expensive.</li>
+        <li><strong>Coverage gaps:</strong> Limited high‑quality data yields incomplete state–action coverage, hurting generalization and reliability.</li>
+      </ul>
+      <p>Thus, pure supervision faces a <strong>ceiling of imitation</strong>: performance is bounded by the demonstrator’s ability and inherits inefficiencies, biases, and occasional errors.</p>
+    </section>
+
+    <section id="hitl">
+      <h3>HITL Augmentation: Gains and Limits</h3>
+      <p>Adding <em>smart humans</em> to patch IL is practical: use HITL or a world/reward model to identify weak regions of the policy’s state/trajectory distribution, then target data collection and fine‑tuning. This expands coverage and boosts generalization—essentially <strong>coverage + human correction</strong> to compensate for IL’s bottlenecks.</p>
+      <p>However, if a policy <strong>never experiences failure</strong> and relies mainly on external handholding, it won’t learn to <strong>avoid bad states</strong>. RL treats failure as a crucial learning signal: through interaction, exploration, and correction, the policy learns which behaviors push the system toward undesirable states—and how to act optimally within them. The goal isn’t to “fall into a bad distribution and then fix it,” but to <strong>avoid entering and amplifying</strong> those bad distributions. Also, IL is bounded by its dataset; truly <strong>superhuman</strong> robots must go beyond imitation.</p>
+    </section>
+
+    <section id="why-rl">
+      <h3>Why RL—and What Blocks It</h3>
+      <p>RL provides a complementary path: it <strong>optimizes return</strong>, not imitation error, and discovers strategies rare or absent in demos. Two blockers in robotics:</p>
+      <ol>
+        <li><strong>Costly real‑world data:</strong> starting from scratch is sample‑inefficient.</li>
+        <li><strong>Sim‑to‑real gaps:</strong> differences in dynamics and perception (vision, touch, etc.).</li>
+      </ol>
+      <p>A central question emerges: <strong>How do we leverage strong human priors and continually improve via self‑directed exploration?</strong> Consider how children learn to walk: guided by parents first, then autonomous practice until mastery across terrains. Likewise, a practical robot system should combine human priors with self‑improvement to reach—and surpass—human‑level reliability, efficiency, and robustness.</p>
+      <figure>
+        <!-- Replace src with your workflow diagram URL -->
+        <img src="./RL100_files/babywalk.png" alt="Human-like learning paradigm" />
+        <figcaption>Human-like learning paradigm.</figcaption>
+      </figure>
+    </section>
+
+    <section id="learning-like-humans">
+      <h2>RL‑100: Learning Like Humans</h2>
+      <p>We start with <strong>human priors</strong>—teachers “teach,” but students need <strong>self‑practice</strong> to generalize. <strong>RL‑100</strong> adds <strong>real‑world RL post‑training</strong> on top of a diffusion‑policy IL backbone. It retains diffusion’s expressivity while using lightly guided exploration to <strong>optimize deployment metrics</strong>—success rate, efficiency, and robustness. In short: <strong>start from human</strong>, <strong>align with human‑grounded objectives</strong>, then <strong>go beyond human</strong>.</p>
+      <div class="callout">
+        <div class="kicker">Three stages</div>
+        <ol>
+          <li><strong>IL pretraining:</strong> Teleop demos provide a low‑variance, stable starting point—the sponge layer of the cake.</li>
+          <li><strong>Iterative Offline RL post‑training:</strong> Update on a growing buffer of interaction data—the cream layer delivering major gains.</li>
+          <li><strong>Online RL post‑training:</strong> The last mile to remove rare failures—the cherry on top. A small, targeted budget pushes ~95% → <strong>99%+</strong>.</li>
+        </ol>
+      </div>
+      <figure>
+        <!-- Replace src with your figure URL -->
+        <img src="./RL100_files/cake.png" alt="RL‑100 stages vs. cake making" />
+        <figcaption>RL‑100 stages vs. cake making.</figcaption>
+      </figure>
+    </section>
+
+    <section id="framework">
+      <h2>RL‑100 Algorithmic Framework</h2>
+      <p>We begin with <strong>Diffusion Policy</strong> (DP)‑based IL, which models <strong>multi‑modal, complex</strong> behavior distributions in demos. This is a powerful <strong>behavior prior</strong> for RL. On top of that, we apply <strong>objective‑aligned weighting and fine‑tuning</strong> so the policy learns <em>when/where/why</em> to choose better actions rather than replay frequent demo actions.</p>
+      <p>Because human data alone can’t cover the full state–action space, we place the policy in the <strong>real environment</strong> for trial‑and‑error and combine <strong>human data</strong> with <strong>policy data</strong>:</p>
+      <ul>
+        <li>Continue IL to absorb augmented behavioral modes.</li>
+        <li>Run <strong>Iterative Offline RL</strong> on a <strong>rolling buffer</strong> of interactions to perform <strong>greedy, objective‑aligned fine‑tuning</strong>, steadily lifting the performance ceiling.</li>
+      </ul>
+      <p><strong>Online RL</strong> is precious and sensitive; we use it for the <strong>last mile</strong>, polishing ~95% to <strong>99%+</strong>. With a <strong>unified offline–online objective</strong>, the transition is seamless and <strong>regression‑free</strong>.</p>
+      <figure>
+        <!-- Replace src with your workflow diagram URL -->
+        <img src="./RL100_files/pipeline.png" alt="RL‑100 training workflow" />
+        <figcaption>RL‑100 training workflow.</figcaption>
+      </figure>
+      <figure>
+        <!-- Replace src with your comparison chart URL -->
+        <img src="./RL100_files/algorithm.jpg" alt="RL-100 algorithm pipeline" />
+        <figcaption>RL-100 algorithm pipeline.</figcaption>
+      </figure>
+    </section>
+
+    <section id="key-modules">
+      <h2>Key Modules — Takeaways</h2>
+      <ul class="key-takeaways">
+        <li><strong>Single‑step actions & action chunking:</strong> Single‑step excels in reactive tasks (e.g., dynamic bowling). Chunking reduces jitter for precision tasks (e.g., assembly). Both share one training scaffold for flexible deployment.</li>
+        <li><strong>One‑step Consistency Distillation:</strong> Enables high‑frequency control critical for industry. A single forward pass yields <em>K‑fold</em> speedups (e.g., 100 ms → 10 ms) while preserving diffusion‑policy quality, unlocking stable cycle time, conveyor tracking, and safe HRC.</li>
+      </ul>
+    </section>
+
+    <section id="experiments">
+      <h2>Experiments</h2>
+
+      <h3>Main Results</h3>
+      <p><strong>7 real‑robot tasks, 900/900 total successes;</strong> <strong>250 consecutive</strong> successes in a single task, <strong>>2 hours</strong> nonstop. Under physical disturbances, zero‑shot, and few‑shot adaptation, success remains high. An orange‑juicing robot provided <strong>7 hours of continuous service</strong> in a mall with <strong>zero failures</strong>.</p>
+      <figure>
+        <!-- Replace src with your montage image URL -->
+        <img src="./RL100_files/tasks.jpg" alt="Tasks" />
+        <figcaption>Tasks.</figcaption>
+      </figure>
+      <figure>
+        <!-- Replace src with mall service image URL -->
+        <img src="./RL100_files/outdoor.jpg" alt="7‑hour mall service, zero failures" />
+        <figcaption>7‑hour mall service, zero failures.</figcaption>
+      </figure>
+      <figure>
+        <!-- Replace src with your montage image URL -->
+        <img src="./RL100_files/results.jpg" alt="Main results" />
+        <figcaption>Main results.</figcaption>
+      </figure>
+
+      <h3>Robustness Under Human Disturbances</h3>
+      <ul>
+        <li><strong>Soft‑towel Folding:</strong> Disturbances in Stage‑1 (initial grasp) and Stage‑2 (pre‑fold) each retain <strong>90%</strong> success.</li>
+        <li><strong>Dynamic Unscrewing:</strong> Up to <strong>4 s</strong> of reverse force during twisting and critical visual alignment—<strong>100%</strong> success; stable recovery.</li>
+        <li><strong>Dynamic Push‑T:</strong> Multiple drag‑style disturbances during pushing—<strong>100%</strong> success.</li>
+      </ul>
+      <p><strong>Overall:</strong> <strong>95.0%</strong> average success across tested scenarios, indicating reliable recovery under unstructured perturbations.</p>
+
+      <h3>Zero‑Shot Generalization</h3>
+      <ul>
+        <li><strong>Dynamic Push‑T:</strong> Large friction changes—<strong>100%</strong>; added distractor shapes—<strong>80%</strong>.</li>
+        <li><strong>Agile Bowling:</strong> Floor property changes—<strong>100%</strong>.</li>
+        <li><strong>Pouring:</strong> Granular (nuts) → liquid (water)—<strong>90%</strong>.</li>
+      </ul>
+      <p><strong>Average 92.5%</strong> success across four change types <strong>without retraining</strong>.</p>
+
+      <h3>Few‑Shot Generalization</h3>
+      <ul>
+        <li><strong>Soft‑towel Folding:</strong> New towel materials—<strong>100%</strong>.</li>
+        <li><strong>Agile Bowling:</strong> Inverted pin arrangement—<strong>100%</strong>.</li>
+        <li><strong>Pouring:</strong> New container geometry—<strong>60%</strong>.</li>
+      </ul>
+      <p><strong>Average 86.7%</strong> with only <strong>1–3 hours</strong> of additional training.</p>
+
+      <h3>Efficiency vs. Baselines & Humans</h3>
+      <ul>
+        <li><strong>Steps in successful trajectories:</strong> Soft‑towel: 390 → <strong>312</strong> (×<strong>1.25</strong>); Unscrewing: 361 → <strong>280</strong> (×<strong>1.29</strong>).</li>
+        <li><strong>Wall‑clock per episode:</strong> RL‑100 (CM) one‑step vs. DDIM: <strong>1.05–1.16×</strong> latency reduction; point clouds over RGB: <strong>1.02–1.31×</strong>. Orange Juicing: <strong>9.2s</strong>, <strong>1.15×</strong> faster than DP‑2D.</li>
+        <li><strong>Versus humans (Dynamic Push‑T):</strong> <strong>20 episodes/unit time</strong>, beating experts by <strong>1.18×</strong>, novices by <strong>1.54×</strong>—<strong>superhuman efficiency</strong>.</li>
+        <li><strong>Including failures:</strong> DP‑2D: <strong>822</strong> → RL‑100 DDIM: <strong>322</strong> (×<strong>2.55</strong> reduction)—efficient and fast aborts.</li>
+      </ul>
+      <p><strong>Summary:</strong> Gains from <strong>(1) efficient encoding (point cloud > RGB)</strong>, <strong>(2) reward‑driven optimization (γ &lt; 1)</strong>, <strong>(3) one‑step inference</strong>. Monotonic trend: <em>DP‑2D → DP3 → RL‑100 DDIM → RL‑100 CM</em>.</p>
+
+      <figure>
+        <!-- Replace src with ablation table/plot URL -->
+        <img src="./RL100_files/efficiency.jpeg" alt="Execution efficiency" />
+        <figcaption>Execution efficiency.</figcaption>
+      </figure>
+      <h3>Robot vs. Humans — Bowling</h3>
+      <p>Robot vs. <strong>5 people</strong>: <strong>25/25</strong> vs. <strong>14/25</strong>.</p>
+      <figure>
+        <!-- Replace src with your comparison chart URL -->
+        <img src="./RL100_files/bowling-human vs robot.png" alt="RL-100 workflow" />
+        <figcaption>RL-100 workflow.</figcaption>
+      </figure>
+      <h3>Training Efficiency</h3>
+      <ul>
+        <li>~<strong>120</strong> on‑policy episodes to reach <strong>stable 100%</strong> success.</li>
+        <li>Smooth learning with <strong>no offline→online regression</strong>.</li>
+        <li>Last <strong>100+</strong> episodes maintain <strong>perfect</strong> success.</li>
+      </ul>
+      <figure>
+        <!-- Replace src with training curve image URL -->
+        <img src="./RL100_files/training_efficiency.jpg" alt="Training efficiency curve" />
+        <figcaption>Training efficiency curve.</figcaption>
+      </figure>
+      <h3>Ablations — Takeaways</h3>
+      <ul>
+        <li><strong>Variance clipping</strong> stabilizes exploration during stochastic DDIM sampling.</li>
+        <li><strong>Epsilon prediction</strong> fits RL better; <strong>larger noise schedules</strong> promote exploration.</li>
+        <li><strong>Reconstruction constraints</strong> mitigate <em>representational drift</em>, improving sample efficiency for vision‑based manipulation.</li>
+        <li><strong>3D models</strong> learn faster and reach higher final success in clean scenes.</li>
+        <li><strong>Consistency Models (CM)</strong> compress multi‑step diffusion to <strong>one‑step</strong> without degrading control quality, enabling high‑frequency deployment.</li>
+      </ul>
+      <figure>
+        <!-- Replace src with ablation table/plot URL -->
+        <img src="./RL100_files/ablation.jpeg" alt="Ablation results" />
+        <figcaption>Ablation results.</figcaption>
+      </figure>
+    </section>
+
+    <section id="outlook">
+      <h2>Outlook</h2>
+      <p>Next we will <strong>stress‑test</strong> in more complex, cluttered, partially observable settings—closer to homes and factories: dynamic multi‑object scenes, occlusions, reflective/transparent materials, lighting changes, and non‑fixed layouts. Building on near‑perfect success, long‑horizon stability, and near‑human efficiency, these tests will better reveal deployment limits and failure modes.</p>
+      <p>Small diffusion policies with modest fine‑tuning already achieve high reliability and efficiency. We plan to extend post‑training to <strong>multi‑task, multi‑robot, multi‑modal VLA models</strong>, including:</p>
+      <ul>
+        <li><strong>Scaling laws</strong> for data/model size vs. real‑robot sample efficiency.</li>
+        <li><strong>Unified policies</strong> for cross‑embodiment and cross‑task transfer.</li>
+        <li><strong>Aligning large‑scale VLA priors</strong> with RL‑100’s unified objective to balance semantic generalization and high success.</li>
+      </ul>
+      <p>Although the pipeline supports conservative operation and stable fine‑tuning, <strong>reset and recovery</strong> remain bottlenecks. We will explore <strong>autonomous reset mechanisms</strong>—learned reset policies, scripted recovery motions, task‑aware fixtures, and <strong>failure‑aware action chunking</strong>—to reduce human intervention, downtime, and stabilize online improvement—<strong>complementing RL‑100</strong>.</p>
+    </section>
+
+    <section id="links">
+      <h2>Project &amp; Paper</h2>
+      <div class="links">
+        <a class="btn" href="#" onclick="alert('Replace with your project URL'); return false;">Project page: RL‑100</a>
+        <a class="btn" href="https://arxiv.org/abs/2510.14830" target="_blank" rel="noopener">Paper on arXiv</a>
+      </div>
+    </section>
+
+    <footer class="center" style="margin-top: 48px; color: var(--muted); font-size: 14px;">
+      <p>© <span id="year"></span> RL‑100 Authors. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

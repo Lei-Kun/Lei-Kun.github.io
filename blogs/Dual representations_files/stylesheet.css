@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,300i,400,400i,600,600i,700,700i&display=swap");
+
+a, a:focus {
+    color: #598be7;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #9bb9f1;
+    text-decoration: none;
+}
+
+.author-link{
+    color: #000000;
+}
+
+.seohong-link {
+    font-weight: 700;
+    color: #000000;
+}
+
+.seohong-codeforces, .seohong-codeforces:focus, .seohong-codeforces:hover {
+    color: red;
+}
+
+body {
+    font-family: 'Source Sans Pro', 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+p {
+    font-weight: 400;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.text-name {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.text-heading {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.text-papertitle {
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.text-conference {
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+.profile-photo {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+table {
+    width: 100%;
+    border: 0px;
+    border-spacing: 0px;
+    border-collapse: separate;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.blog-contents {
+    padding: 0px 40px 5px 20px;
+    width: 75%;
+    vertical-align: middle;
+}
+
+.pub-contents {
+    padding: 0px 40px 0px 20px;
+    width: 75%;
+    vertical-align: middle;
+}
+
+.pub-description {
+    padding: 5px 10px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.contents {
+    padding: 0px 40px 0px 40px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.heading {
+    padding: 20px 20px 10px 20px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.twolevel h3 {
+    margin: 0px;
+    padding: 5px;
+}
+.twolevel .twotitle {
+    margin: 0px;
+    padding: 5px;
+}
+
+.twolevel p {
+    margin: 0px 20px 0px 20px;
+    padding: 5px;
+}
+
+.threelevel h3{
+    margin: 0px;
+    padding: 5px;
+}
+
+.threelevel p{
+    margin: 0px 20px 0px 20px;
+    padding: 5px;
+}
+
+.threelevel-condensed p:first-of-type{
+    margin: 0px 20px 0px 20px;
+    padding: 5px 5px 5px 5px;
+}
+.threelevel-condensed p:not(:first-of-type){
+    margin: 0px 20px 0px 20px;
+    padding: 0px 5px 5px 5px;
+}
+
+.threelevel .three-inner{
+    margin: 0px 40px 0px 40px;
+    padding: 5px;
+}
