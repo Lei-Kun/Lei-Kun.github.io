@@ -78,6 +78,38 @@
         height: auto; /* 高度自适应 */
     }
 </style>
+<style>
+.blog-entry {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.blog-entry:last-child {
+    border-bottom: none;
+}
+
+.blog-date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.blog-title {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+
+.blog-excerpt {
+    color: #555;
+    line-height: 1.6em;
+}
+
+.blog-read-more {
+    margin-top: 8px;
+    display: inline-block;
+}
+</style>
 <!-- <style>
     body {
       background-image: linear-gradient(to bottom, rgba(225, 168, 97), rgba(255, 255, 255));
@@ -169,8 +201,22 @@
             Previously, I conducted research on neural solvers for combinatorial optimization problems, i.e., in the field of AI for Operations Research. These neural agents have the potential to solve NP-hard problems with linear time complexity, see <a href="https://zhuanlan.zhihu.com/p/560810810">Zhihu</a>. 
         </p>
     </div>
-
-    
+    <div>
+        <h2 class="noselect">Blogs</h2>
+        
+        <div class="blog-entry">
+            <div class="blog-date">2025.10</div>
+            <div class="blog-title">
+                <a href="blogs/RL100.html">Beyond Human Capability: The Robotic Era</a>
+            </div>
+            <div class="blog-excerpt">
+                A three-stage framework from imitation to iterative offline and last-mile online RL that achieves near-perfect success with high efficiency and robustness.
+            </div>
+            <div class="blog-read-more">
+                <a href="blogs/RL100.html">Read more &rarr;</a>
+            </div>
+        </div>
+    </div>
     <div>
         <h2 class="noselect">Publications and preprints (Offline & online RL algorithms and robotics)</h2>
         <p>Papers sorted by recency, * indicates equal contribution.</p>
