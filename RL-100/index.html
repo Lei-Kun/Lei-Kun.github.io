@@ -61,6 +61,39 @@
     <link rel="stylesheet" href="./RL100_files/main.css">
     <link rel="stylesheet" href="./RL100_files/all.min.css">
     <link rel="stylesheet" href="./RL100_files/font-awesome.min.css">
+    
+    <style>
+        /* Speed toggle button styles */
+        .speed-toggle-btn {
+            background-color: #4a5568;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 15px;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .speed-toggle-btn:hover {
+            background-color: #2d3748;
+        }
+        
+        .speed-toggle-btn.active {
+            background-color: #3182ce;
+        }
+        
+        /* Hidden section */
+        .speed-section.hidden {
+            display: none;
+        }
+        
+        .speed-section {
+            display: block;
+        }
+    </style>
 
     <!-- <link rel="icon" type="image/png" sizes="512x512" href="https://lei-kun.github.io//TWIST/images/logo.png"> -->
 
@@ -488,7 +521,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         <div class="header-links">
             <!-- <a href="#teaser">Cover</a> 
             <a href="#team">Team</a> -->
-            <a href="https://lei-kun.github.io/RL-100/#100">100% success</a>
+            <a href="https://lei-kun.github.io/RL-100/#100success">100% success</a>
             <a href="https://lei-kun.github.io/RL-100/#Robustness">Robustness</a>
             <a href="https://lei-kun.github.io/RL-100/#Zero-shot-adaptation">Zero-shot</a>
             <a href="https://lei-kun.github.io/RL-100/#Few-shot-adaptation">Few-shot</a>
@@ -1034,7 +1067,9 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 <div id="overview">
 
     <h1>Reliable, Efficient, and Robust Real-World Robotic Manipulation Deployment</h1>
-    <h1 id="100">100% success across seven tasks</h1>
+    <h1 id="100success">100% success across seven tasks 
+        <button id="speed-toggle-btn" class="speed-toggle-btn" onclick="toggleSpeed()">Click to switch to 1x speed demo</button>
+    </h1>
     <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
     
     <!-- 第一行：Soft-towel Folding 和 Dynamic Unscrewing -->
@@ -1180,7 +1215,142 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
           </div>
       </div>
   </div>
+  
+  <!-- 1X speed videos section (hidden by default) -->
+  <div id="speed-1x-section" class="speed-section hidden">
+  <h1 id="100-1x">100% success across seven tasks, 1X speed</h1>
+  <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
+  
+  <!-- 第一行：Soft-towel Folding 和 Dynamic Unscrewing -->
+  <div class="task-row">
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube.com/embed/ov1rXGM0C_E?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Soft-towel Folding</div>
+              </div>
+          </div>
+      </div>
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube.com/embed/CdUjFdP-ILI?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Dynamic Unscrewing</div>
+              </div>
+          </div>
+      </div>
+  </div>
 
+  <!-- 第二行：Pouring 和 Orange Juicing - Placing -->
+  <div class="task-row">
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube.com/embed/JmfJ66eaAgQ?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Pouring</div>
+              </div>
+          </div>
+      </div>
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube.com/embed/N56oKIdOKjA?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Orange Juicing - Placing</div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- 第三行：Orange Juicing - Removal 和 Agile Bowling -->
+  <div class="task-row">
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube.com/embed/qt7DhzOjz9k?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Orange Juicing - Removal</div>
+              </div>
+          </div>
+      </div>
+      <div class="task-column">
+          <div class="video_container_wrapper1">
+              <div class="video_container">
+                  <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                  <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                      <iframe class="content-video"
+                              src="https://www.youtube.com/embed/70HxJB-TUUs?rel=0"
+                              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                              loading="lazy"></iframe>
+                  </div>
+                  <div class="overlay-clean">Agile Bowling</div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- 第三行：Orange Juicing - Removal 和 Agile Bowling -->
+  <div class="task-row">
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube.com/embed/a_eFXZuSs5o?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="overlay-clean">Dynamic Push-T</div>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  <!-- End of 1X speed videos section -->
+  
   <h1 id="Robustness">Robustness to physical disturbances</h1>
   <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
   
@@ -1597,7 +1767,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
       <br>
       Training robots is like baking a cake: demonstration learning (IL) forms the sponge base, offline reinforcement learning adds the rich cream layer, and online reinforcement learning crowns it all as the cherry on top.
     <hr class="rounded">
-
+    
     <h1 id="Related-Work">Related Work</h1>
     <div class="related-paper">
         <div class="related-paper-content">
@@ -1742,6 +1912,27 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
             videoObserver.observe(video);
         });
     });
+    
+    // Speed toggle function
+    function toggleSpeed() {
+        const speedSection = document.getElementById('speed-1x-section');
+        const toggleBtn = document.getElementById('speed-toggle-btn');
+        
+        if (speedSection.classList.contains('hidden')) {
+            // Show 1X speed videos
+            speedSection.classList.remove('hidden');
+            toggleBtn.textContent = 'Click to switch to normal speed demo';
+            toggleBtn.classList.add('active');
+            
+            // Scroll to the 1X speed section
+            speedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            // Hide 1X speed videos
+            speedSection.classList.add('hidden');
+            toggleBtn.textContent = 'Click to switch to 1x speed demo';
+            toggleBtn.classList.remove('active');
+        }
+    }
 </script>
 
 
