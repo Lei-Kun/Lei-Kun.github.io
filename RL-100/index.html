@@ -94,7 +94,48 @@
             display: block;
         }
     </style>
+    <style>
+        /* Baseline toggle button styles */
+        .baseline-toggle-btn {
+            background-color: #4a5568;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 15px;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .baseline-toggle-btn:hover {
+            background-color: #2d3748;
+        }
+        
+        .baseline-toggle-btn.active {
+            background-color: #3182ce;
+        }
+        
+        /* Hidden section */
+        .baseline-section.hidden {
+            display: none;
+        }
 
+        .baseline-section {
+            display: block;
+        }
+
+        /* DP3 section default visible */
+        #dp3-section {
+            display: block;
+        }
+
+        /* 2D DP section default hidden */
+        #baseline-1x-section.hidden {
+            display: none;
+        }
+    </style>
     <!-- <link rel="icon" type="image/png" sizes="512x512" href="https://lei-kun.github.io//TWIST/images/logo.png"> -->
 
     <meta property="og:type" content="website">
@@ -522,6 +563,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
             <!-- <a href="#teaser">Cover</a> 
             <a href="#team">Team</a> -->
             <a href="https://lei-kun.github.io/RL-100/#100success">100% success</a>
+            <a href="https://lei-kun.github.io/RL-100/#baseline-dp3">Baselines</a>
             <a href="https://lei-kun.github.io/RL-100/#Robustness">Robustness</a>
             <a href="https://lei-kun.github.io/RL-100/#Zero-shot-adaptation">Zero-shot</a>
             <a href="https://lei-kun.github.io/RL-100/#Few-shot-adaptation">Few-shot</a>
@@ -618,7 +660,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
     <div id="abstract">
         <div class="video_container">
             <div class="publication-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/2mEjVwSDR7s?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" spellcheck="false" aria-label="To enrich screen reader interactions, please activate Accessibility in Grammarly extension settings"></iframe><grammarly-extension data-grammarly-shadow-root="true" class="dnXmp" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: auto; --rem: 16;"><template shadowrootmode="open"><style>.teaserCard_fxhghsp{background:#ffffff;border-radius:0 calc(0.75px * var(--rem)) calc(0.75px * var(--rem)) calc(0.75px * var(--rem));box-shadow:0px 1px 8px 0.5px rgba(135, 141, 162, 0.50);font-size:calc(0.875px * var(--rem));line-height:1.5;margin-top:3px;max-width:calc(21.5px * var(--rem));padding:calc(0.25px * var(--rem))}.showFullCard_frsuylz{color:#016A5E;display:inline-block;font-family:Inter;font-size:calc(0.875px * var(--rem));font-weight:700;line-height:1.5;white-space:nowrap}.dismissIconRow_f1s0la05{bottom:0;cursor:pointer;display:flex;flex-direction:column;justify-content:end;padding:calc(0.5px * var(--rem));position:absolute;right:0}.dismissIconBox_f1kkwfhx{align-items:center;border:1px solid transparent;border-radius:calc(0.5px * var(--rem));display:flex;height:calc(2px * var(--rem));justify-content:center;width:calc(2px * var(--rem))}.dismissIconBox_f1kkwfhx:hover{background:#EBEBEB;border:1px solid #A8A8A8 !important}.teaserRow_fit6i0j{cursor:pointer;display:flex;gap:calc(0.5px * var(--rem));padding:calc(0.25px * var(--rem));padding-right:calc(2.5px * var(--rem))}.teaserBackground_f1akz7ku{background:transparent}.teaserBackground_f1akz7ku:hover{background:#EBEBEB;border-radius:calc(0.5px * var(--rem))}.suggestionText_ffqtqcu{margin-left:0;margin-right:calc(0.5px * var(--rem))}.teaserContent_f1a11phz{display:inline-block;text-align:left;width:fit-content}.logo_fofu1t3{align-items:center;display:flex;height:calc(1.25px * var(--rem));justify-content:center;padding-left:calc(0.25px * var(--rem))}.iconSize_ftxbu1z{height:calc(1.25px * var(--rem));width:calc(1.25px * var(--rem))}.wrapper_fpd82bo{border:7px solid rgb(51, 57, 84);position:absolute;transform:translate(-7px, -7px)}.top_fxrg51k{border-left-color:transparent;border-right-color:transparent;border-top-color:transparent}.top_fxrg51k + *{transform:translateY(7px)}.right_f8ouv74{border-bottom-color:transparent;border-right-color:transparent;border-top-color:transparent}.right_f8ouv74 + *{transform:translateX(-7px)}.bottom_f1egmyip{border-bottom-color:transparent;border-left-color:transparent;border-right-color:transparent}.bottom_f1egmyip + *{transform:translateY(-7px)}.left_fadbd2e{border-bottom-color:transparent;border-left-color:transparent;border-top-color:transparent}.left_fadbd2e + *{transform:translateX(7px)}.hidden_f5z7vvf{opacity:0;visibility:hidden}.wrapper_f1x2i2y1{position:absolute;transition:opacity .2s}.container_f1bp7wzs{pointer-events:none;position:fixed;z-index:10000}@media print{.container_f1bp7wzs{visibility:hidden}}.content_f57u1qe{background:rgb(51, 57, 84);border-radius:calc(0.25px * var(--rem));color:#F9FAFF;font-size:calc(0.75px * var(--rem));letter-spacing:0.25px;line-height:calc(1px * var(--rem));padding:calc(0.25px * var(--rem)) calc(1px * var(--rem));text-align:center;white-space:nowrap}</style><style>*[data-gramm] g{display:inline;color:inherit !important;font-size:inherit !important}*[data-gramm] gr_block{color:inherit !important;font-size:inherit !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm{border-bottom:2px solid transparent;background-repeat:no-repeat;background-position:-1px calc(100% + 3px);background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/1e327dac156d0f9d/underline-inline-cards.svg);background-size:calc(100% + 1px) 100%;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_premium{background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/35ca7c56ceec901d/underline-inline-cards-premium.svg)}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_spell .gr_gramm.gr-alert,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_spell .gr_gramm.gr-alert,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_spell .gr_gramm.gr-alert,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_spell .gr_gramm.gr-alert,*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_gramm .gr_gramm.gr-alert,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_gramm .gr_gramm.gr-alert,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_gramm .gr_gramm.gr-alert,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_gramm .gr_gramm.gr-alert{background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/1e327dac156d0f9d/underline-inline-cards.svg);}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_spell .gr_gramm.gr-alert.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_spell .gr_gramm.gr-alert.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_spell .gr_gramm.gr-alert.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_spell .gr_gramm.gr-alert.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_gramm .gr_gramm.gr-alert.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_gramm .gr_gramm.gr-alert.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_gramm .gr_gramm.gr-alert.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_gramm .gr_gramm.gr-alert.gr_premium{background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/35ca7c56ceec901d/underline-inline-cards-premium.svg)}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_run_anim,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_run_anim,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_run_anim,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_run_anim{animation:gr__appear_critical .4s ease forwards;}@supports (-ms-ime-align:auto){*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_run_anim,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_run_anim,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_run_anim,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_run_anim{animation:none !important}}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear{animation:none !important;background-size:calc(100% + 1px) 100% !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr-progress,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr-progress,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr-progress,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr-progress{animation:gr__appear_critical_sel_inline .5s ease forwards,gr__appear_critical .5s forwards !important;background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/283f5c27d57541c1/underline-inline-cards-appear.svg) !important;border-bottom-width:2px;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr-progress.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr-progress.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr-progress.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr-progress.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards,gr__appear_critical .5s forwards !important;background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/0a157672c1130a96/underline-inline-cards-appear-premium.svg) !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr-progress-overlay,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr-progress-overlay,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr-progress-overlay,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr-progress-overlay{animation:gr__appear_critical_sel_inline_overlay .5s ease forwards,gr__appear_critical .5s forwards !important;background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/283f5c27d57541c1/underline-inline-cards-appear.svg) !important;border-bottom-width:2px;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr-progress-overlay.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr-progress-overlay.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr-progress-overlay.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr-progress-overlay.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards,gr__appear_critical .5s forwards !important;background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/0a157672c1130a96/underline-inline-cards-appear-premium.svg) !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress{animation:gr__appear_critical_sel_inline .5s ease forwards !important;background-size:calc(100% + 3px) 100% !important;background-position-x:-2px !important;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress-overlay,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress-overlay,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress-overlay,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress-overlay{animation:gr__appear_critical_sel_inline_overlay .5s ease forwards !important;background-size:calc(100% + 3px) 100% !important;background-position-x:-2px !important;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress-overlay.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress-overlay.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress-overlay.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress-overlay.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_replaced,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_replaced,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_replaced,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_replaced{border-bottom:0 !important;background-size:0 !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_hide.sel,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_hide.sel,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_hide.sel,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_hide.sel{border-bottom-width:2px}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_tiny,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_tiny,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_tiny,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_tiny,*[data-gramm][data-gramm_editor] .gr-alert.gr_spell:empty,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell:empty,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm:empty,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm:empty{padding:0 .35em;margin:0 -.35em}*[data-gramm][data-gramm_editor] .kix-lineview .gr-alert.gr_spell,body[data-gramm_id][data-gramm_editor] .kix-lineview .gr-alert.gr_spell,*[data-gramm][data-gramm_editor] .kix-lineview .gr-alert.gr_gramm,body[data-gramm_id][data-gramm_editor] .kix-lineview .gr-alert.gr_gramm{padding:0;margin:0;width:100%;bottom:-2px;position:absolute;height:4px;}*[data-gramm][data-gramm_editor] .kix-lineview .gr-alert.gr_spell.gr_tiny,body[data-gramm_id][data-gramm_editor] .kix-lineview .gr-alert.gr_spell.gr_tiny,*[data-gramm][data-gramm_editor] .kix-lineview .gr-alert.gr_gramm.gr_tiny,body[data-gramm_id][data-gramm_editor] .kix-lineview .gr-alert.gr_gramm.gr_tiny{padding:0 .35em !important;margin:0 -.35em !important}ghost *[data-gramm][data-gramm_editor] .gr-alert.gr-progress,grammarly-ghost *[data-gramm][data-gramm_editor] .gr-alert.gr-progress,ghost body[data-gramm_id][data-gramm_editor] .gr-alert.gr-progress,grammarly-ghost body[data-gramm_id][data-gramm_editor] .gr-alert.gr-progress{animation:gr__appear_critical_sel_inline .5s ease forwards !important;}ghost *[data-gramm][data-gramm_editor] .gr-alert.gr-progress.gr_premium,grammarly-ghost *[data-gramm][data-gramm_editor] .gr-alert.gr-progress.gr_premium,ghost body[data-gramm_id][data-gramm_editor] .gr-alert.gr-progress.gr_premium,grammarly-ghost body[data-gramm_id][data-gramm_editor] .gr-alert.gr-progress.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards !important}ghost .gr_highlight_replacement,grammarly-ghost .gr_highlight_replacement,*[data-gramm][data-gramm_editor] .gr_highlight_replacement,body[data-gramm_id][data-gramm_editor] .gr_highlight_replacement{animation:gr__fade_replacement___ 3s ease forwards !important}@keyframes gr__appear_critical{0%{background-size:0 100%}100%{background-size:calc(100% + 1px) 100%}}@keyframes gr__appear_critical_sel_inline{0%{background-color:transparent;background-size:calc(100% + 1px) 100% !important}100%{background-color:#f6d5d9;background-size:calc(100% + 1px) 100% !important}}@keyframes gr__appear_premium_sel_inline{0%{background-color:transparent;background-size:calc(100% + 1px) 100% !important}100%{background-color:rgba(250,214,51,0.25);background-size:calc(100% + 1px) 100% !important}}@keyframes gr__appear_critical_sel_inline_overlay{0%{background-color:transparent;background-size:calc(100% + 1px) 100% !important}100%{background-color:rgba(255,0,0,0.15);background-size:calc(100% + 1px) 100% !important}}@keyframes gr__fade_replacement___{0%{background-color:#cff3ec}100%{background-color:transparent}}
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Iaq3moDov1g?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" spellcheck="false" aria-label="To enrich screen reader interactions, please activate Accessibility in Grammarly extension settings"></iframe><grammarly-extension data-grammarly-shadow-root="true" class="dnXmp" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: auto; --rem: 16;"><template shadowrootmode="open"><style>.teaserCard_fxhghsp{background:#ffffff;border-radius:0 calc(0.75px * var(--rem)) calc(0.75px * var(--rem)) calc(0.75px * var(--rem));box-shadow:0px 1px 8px 0.5px rgba(135, 141, 162, 0.50);font-size:calc(0.875px * var(--rem));line-height:1.5;margin-top:3px;max-width:calc(21.5px * var(--rem));padding:calc(0.25px * var(--rem))}.showFullCard_frsuylz{color:#016A5E;display:inline-block;font-family:Inter;font-size:calc(0.875px * var(--rem));font-weight:700;line-height:1.5;white-space:nowrap}.dismissIconRow_f1s0la05{bottom:0;cursor:pointer;display:flex;flex-direction:column;justify-content:end;padding:calc(0.5px * var(--rem));position:absolute;right:0}.dismissIconBox_f1kkwfhx{align-items:center;border:1px solid transparent;border-radius:calc(0.5px * var(--rem));display:flex;height:calc(2px * var(--rem));justify-content:center;width:calc(2px * var(--rem))}.dismissIconBox_f1kkwfhx:hover{background:#EBEBEB;border:1px solid #A8A8A8 !important}.teaserRow_fit6i0j{cursor:pointer;display:flex;gap:calc(0.5px * var(--rem));padding:calc(0.25px * var(--rem));padding-right:calc(2.5px * var(--rem))}.teaserBackground_f1akz7ku{background:transparent}.teaserBackground_f1akz7ku:hover{background:#EBEBEB;border-radius:calc(0.5px * var(--rem))}.suggestionText_ffqtqcu{margin-left:0;margin-right:calc(0.5px * var(--rem))}.teaserContent_f1a11phz{display:inline-block;text-align:left;width:fit-content}.logo_fofu1t3{align-items:center;display:flex;height:calc(1.25px * var(--rem));justify-content:center;padding-left:calc(0.25px * var(--rem))}.iconSize_ftxbu1z{height:calc(1.25px * var(--rem));width:calc(1.25px * var(--rem))}.wrapper_fpd82bo{border:7px solid rgb(51, 57, 84);position:absolute;transform:translate(-7px, -7px)}.top_fxrg51k{border-left-color:transparent;border-right-color:transparent;border-top-color:transparent}.top_fxrg51k + *{transform:translateY(7px)}.right_f8ouv74{border-bottom-color:transparent;border-right-color:transparent;border-top-color:transparent}.right_f8ouv74 + *{transform:translateX(-7px)}.bottom_f1egmyip{border-bottom-color:transparent;border-left-color:transparent;border-right-color:transparent}.bottom_f1egmyip + *{transform:translateY(-7px)}.left_fadbd2e{border-bottom-color:transparent;border-left-color:transparent;border-top-color:transparent}.left_fadbd2e + *{transform:translateX(7px)}.hidden_f5z7vvf{opacity:0;visibility:hidden}.wrapper_f1x2i2y1{position:absolute;transition:opacity .2s}.container_f1bp7wzs{pointer-events:none;position:fixed;z-index:10000}@media print{.container_f1bp7wzs{visibility:hidden}}.content_f57u1qe{background:rgb(51, 57, 84);border-radius:calc(0.25px * var(--rem));color:#F9FAFF;font-size:calc(0.75px * var(--rem));letter-spacing:0.25px;line-height:calc(1px * var(--rem));padding:calc(0.25px * var(--rem)) calc(1px * var(--rem));text-align:center;white-space:nowrap}</style><style>*[data-gramm] g{display:inline;color:inherit !important;font-size:inherit !important}*[data-gramm] gr_block{color:inherit !important;font-size:inherit !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm{border-bottom:2px solid transparent;background-repeat:no-repeat;background-position:-1px calc(100% + 3px);background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/1e327dac156d0f9d/underline-inline-cards.svg);background-size:calc(100% + 1px) 100%;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_premium{background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/35ca7c56ceec901d/underline-inline-cards-premium.svg)}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_spell .gr_gramm.gr-alert,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_spell .gr_gramm.gr-alert,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_spell .gr_gramm.gr-alert,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_spell .gr_gramm.gr-alert,*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_gramm .gr_gramm.gr-alert,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_gramm .gr_gramm.gr-alert,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_gramm .gr_gramm.gr-alert,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_gramm .gr_gramm.gr-alert{background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/1e327dac156d0f9d/underline-inline-cards.svg);}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_spell .gr_gramm.gr-alert.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_spell .gr_gramm.gr-alert.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_spell .gr_gramm.gr-alert.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_spell .gr_gramm.gr-alert.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_gramm .gr_gramm.gr-alert.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_gramm .gr_gramm.gr-alert.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_gramm .gr_gramm.gr-alert.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_gramm .gr_gramm.gr-alert.gr_premium{background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/35ca7c56ceec901d/underline-inline-cards-premium.svg)}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_run_anim,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_run_anim,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_run_anim,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_run_anim{animation:gr__appear_critical .4s ease forwards;}@supports (-ms-ime-align:auto){*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_run_anim,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_run_anim,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_run_anim,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_run_anim{animation:none !important}}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear{animation:none !important;background-size:calc(100% + 1px) 100% !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr-progress,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr-progress,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr-progress,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr-progress{animation:gr__appear_critical_sel_inline .5s ease forwards,gr__appear_critical .5s forwards !important;background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/283f5c27d57541c1/underline-inline-cards-appear.svg) !important;border-bottom-width:2px;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr-progress.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr-progress.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr-progress.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr-progress.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards,gr__appear_critical .5s forwards !important;background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/0a157672c1130a96/underline-inline-cards-appear-premium.svg) !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr-progress-overlay,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr-progress-overlay,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr-progress-overlay,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr-progress-overlay{animation:gr__appear_critical_sel_inline_overlay .5s ease forwards,gr__appear_critical .5s forwards !important;background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/283f5c27d57541c1/underline-inline-cards-appear.svg) !important;border-bottom-width:2px;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr-progress-overlay.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr-progress-overlay.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr-progress-overlay.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr-progress-overlay.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards,gr__appear_critical .5s forwards !important;background-image:url(chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/images/0a157672c1130a96/underline-inline-cards-appear-premium.svg) !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress{animation:gr__appear_critical_sel_inline .5s ease forwards !important;background-size:calc(100% + 3px) 100% !important;background-position-x:-2px !important;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress-overlay,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress-overlay,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress-overlay,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress-overlay{animation:gr__appear_critical_sel_inline_overlay .5s ease forwards !important;background-size:calc(100% + 3px) 100% !important;background-position-x:-2px !important;}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress-overlay.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_disable_anim_appear.gr-progress-overlay.gr_premium,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress-overlay.gr_premium,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_disable_anim_appear.gr-progress-overlay.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_replaced,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_replaced,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_replaced,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_replaced{border-bottom:0 !important;background-size:0 !important}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_hide.sel,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_hide.sel,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_hide.sel,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_hide.sel{border-bottom-width:2px}*[data-gramm][data-gramm_editor] .gr-alert.gr_spell.gr_tiny,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell.gr_tiny,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm.gr_tiny,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm.gr_tiny,*[data-gramm][data-gramm_editor] .gr-alert.gr_spell:empty,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_spell:empty,*[data-gramm][data-gramm_editor] .gr-alert.gr_gramm:empty,body[data-gramm_id][data-gramm_editor] .gr-alert.gr_gramm:empty{padding:0 .35em;margin:0 -.35em}*[data-gramm][data-gramm_editor] .kix-lineview .gr-alert.gr_spell,body[data-gramm_id][data-gramm_editor] .kix-lineview .gr-alert.gr_spell,*[data-gramm][data-gramm_editor] .kix-lineview .gr-alert.gr_gramm,body[data-gramm_id][data-gramm_editor] .kix-lineview .gr-alert.gr_gramm{padding:0;margin:0;width:100%;bottom:-2px;position:absolute;height:4px;}*[data-gramm][data-gramm_editor] .kix-lineview .gr-alert.gr_spell.gr_tiny,body[data-gramm_id][data-gramm_editor] .kix-lineview .gr-alert.gr_spell.gr_tiny,*[data-gramm][data-gramm_editor] .kix-lineview .gr-alert.gr_gramm.gr_tiny,body[data-gramm_id][data-gramm_editor] .kix-lineview .gr-alert.gr_gramm.gr_tiny{padding:0 .35em !important;margin:0 -.35em !important}ghost *[data-gramm][data-gramm_editor] .gr-alert.gr-progress,grammarly-ghost *[data-gramm][data-gramm_editor] .gr-alert.gr-progress,ghost body[data-gramm_id][data-gramm_editor] .gr-alert.gr-progress,grammarly-ghost body[data-gramm_id][data-gramm_editor] .gr-alert.gr-progress{animation:gr__appear_critical_sel_inline .5s ease forwards !important;}ghost *[data-gramm][data-gramm_editor] .gr-alert.gr-progress.gr_premium,grammarly-ghost *[data-gramm][data-gramm_editor] .gr-alert.gr-progress.gr_premium,ghost body[data-gramm_id][data-gramm_editor] .gr-alert.gr-progress.gr_premium,grammarly-ghost body[data-gramm_id][data-gramm_editor] .gr-alert.gr-progress.gr_premium{animation:gr__appear_premium_sel_inline .5s ease forwards !important}ghost .gr_highlight_replacement,grammarly-ghost .gr_highlight_replacement,*[data-gramm][data-gramm_editor] .gr_highlight_replacement,body[data-gramm_id][data-gramm_editor] .gr_highlight_replacement{animation:gr__fade_replacement___ 3s ease forwards !important}@keyframes gr__appear_critical{0%{background-size:0 100%}100%{background-size:calc(100% + 1px) 100%}}@keyframes gr__appear_critical_sel_inline{0%{background-color:transparent;background-size:calc(100% + 1px) 100% !important}100%{background-color:#f6d5d9;background-size:calc(100% + 1px) 100% !important}}@keyframes gr__appear_premium_sel_inline{0%{background-color:transparent;background-size:calc(100% + 1px) 100% !important}100%{background-color:rgba(250,214,51,0.25);background-size:calc(100% + 1px) 100% !important}}@keyframes gr__appear_critical_sel_inline_overlay{0%{background-color:transparent;background-size:calc(100% + 1px) 100% !important}100%{background-color:rgba(255,0,0,0.15);background-size:calc(100% + 1px) 100% !important}}@keyframes gr__fade_replacement___{0%{background-color:#cff3ec}100%{background-color:transparent}}
 /* This file is autogenerated by Grammarly Design System */
 :host {
   --blue-0: #f3f6ff;
@@ -1347,9 +1389,294 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
             </div>
         </div>
     </div>
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube.com/embed/yCABfQPNXNc?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="overlay-clean">Overall Juicing</div>
+            </div>
+        </div>
+    </div>
   </div>
   </div>
   <!-- End of 1X speed videos section -->
+
+  <div id="dp3-section">
+  <h1 id="baselines-dp3">Baselines - DP3
+    <button id="baseline-toggle-btn" class="baseline-toggle-btn" onclick="toggleBaselineSpeed()">Click to switch to 2D DP</button>
+</h1>
+<!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
+
+<!-- 第一行：Soft-towel Folding 和 Dynamic Unscrewing -->
+<div class="task-row">
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube.com/embed/eujdcnHMJDQ?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="overlay-clean">Soft-towel Folding</div>
+            </div>
+        </div>
+    </div>
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube.com/embed/SbD1sMUG1Pc?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="overlay-clean">Dynamic Unscrewing</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 第二行：Pouring 和 Orange Juicing - Placing -->
+<div class="task-row">
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube.com/embed/aT99kGiBuac?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="overlay-clean">Pouring</div>
+            </div>
+        </div>
+    </div>
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube.com/embed/eQDtBhdhSTo?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="overlay-clean">Orange Juicing - Placing</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 第三行：Orange Juicing - Removal 和 Agile Bowling -->
+<div class="task-row">
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube.com/embed/fqOkJYU67Ok?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="overlay-clean">Orange Juicing - Removal</div>
+            </div>
+        </div>
+    </div>
+    <div class="task-column">
+        <div class="video_container_wrapper1">
+            <div class="video_container">
+                <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+                <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe class="content-video"
+                            src="https://www.youtube-nocookie.com/embed/p2f50WNYSVg?rel=0"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
+                <div class="overlay-clean">Agile Bowling</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 第三行：Orange Juicing - Removal 和 Agile Bowling -->
+<div class="task-row">
+  <div class="task-column">
+      <div class="video_container_wrapper1">
+          <div class="video_container">
+              <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+              <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                  <iframe class="content-video"
+                          src="https://www.youtube.com/embed/KW4_6OZzLAo?rel=0"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          loading="lazy"></iframe>
+              </div>
+              <div class="overlay-clean">Dynamic Push-T</div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+<!-- 1X speed videos section (hidden by default) -->
+<div id="baseline-1x-section" class="baseline-section hidden">
+<h1 id="baselines-dp">Baseline - 2D DP</h1>
+<!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
+
+<!-- 第一行：Soft-towel Folding 和 Dynamic Unscrewing -->
+<div class="task-row">
+  <div class="task-column">
+      <div class="video_container_wrapper1">
+          <div class="video_container">
+              <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+              <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                  <iframe class="content-video"
+                          src="https://www.youtube.com/embed/qM766X_xbqo?rel=0"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          loading="lazy"></iframe>
+              </div>
+              <div class="overlay-clean">Soft-towel Folding</div>
+          </div>
+      </div>
+  </div>
+  <div class="task-column">
+      <div class="video_container_wrapper1">
+          <div class="video_container">
+              <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+              <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                  <iframe class="content-video"
+                          src="https://www.youtube.com/embed/z2zECbIWNTw?rel=0"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          loading="lazy"></iframe>
+              </div>
+              <div class="overlay-clean">Dynamic Unscrewing</div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- 第二行：Pouring 和 Orange Juicing - Placing -->
+<div class="task-row">
+  <div class="task-column">
+      <div class="video_container_wrapper1">
+          <div class="video_container">
+              <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+              <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                  <iframe class="content-video"
+                          src="https://www.youtube.com/embed/azhc6a9cjj0?rel=0"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          loading="lazy"></iframe>
+              </div>
+              <div class="overlay-clean">Pouring</div>
+          </div>
+      </div>
+  </div>
+  <div class="task-column">
+      <div class="video_container_wrapper1">
+          <div class="video_container">
+              <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+              <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                  <iframe class="content-video"
+                          src="https://www.youtube.com/embed/KGAPQ9Y9V9A?rel=0"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          loading="lazy"></iframe>
+              </div>
+              <div class="overlay-clean">Orange Juicing - Placing</div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- 第三行：Orange Juicing - Removal 和 Agile Bowling -->
+<div class="task-row">
+  <div class="task-column">
+      <div class="video_container_wrapper1">
+          <div class="video_container">
+              <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+              <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                  <iframe class="content-video"
+                          src="https://www.youtube.com/embed/si-Fu7B-8Fg?rel=0"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          loading="lazy"></iframe>
+              </div>
+              <div class="overlay-clean">Orange Juicing - Removal</div>
+          </div>
+      </div>
+  </div>
+  <div class="task-column">
+      <div class="video_container_wrapper1">
+          <div class="video_container">
+              <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+              <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                  <iframe class="content-video"
+                          src="https://www.youtube.com/embed/WTKVSfTVW18?rel=0"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          loading="lazy"></iframe>
+              </div>
+              <div class="overlay-clean">Agile Bowling</div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- 第三行：Orange Juicing - Removal 和 Agile Bowling -->
+<div class="task-row">
+<div class="task-column">
+    <div class="video_container_wrapper1">
+        <div class="video_container">
+            <!-- 正确的 embed URL（替换 VIDEO_ID） -->
+            <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                <iframe class="content-video"
+                        src="https://www.youtube.com/embed/6P6h0PKWuvI?rel=0"
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy"></iframe>
+            </div>
+            <div class="overlay-clean">Dynamic Push-T</div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
   
   <h1 id="Robustness">Robustness to physical disturbances</h1>
   <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
@@ -1368,7 +1695,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                             allowfullscreen
                             loading="lazy"></iframe>
                 </div>
-                <div class="overlay-clean">Sustained counter-rotational interference</div>
+                <div class="overlay-clean">Sustained counter-rotational interference (over 5 seconds)</div>
             </div>
         </div>
     </div>
@@ -1428,6 +1755,17 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
       </div>
   </div>
 </div>
+<p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
+    <strong>Takeaway:</strong>
+    <br>
+    <strong>Soft‑towel Folding:</strong> Disturbances in Stage‑1 (initial grasp) and Stage‑2 (pre‑fold) each retain <strong>90%</strong> success.
+    <br>
+    <strong>Dynamic Unscrewing:</strong> Up to <strong>4 s</strong> of reverse force during twisting and critical visual alignment—<strong>100%</strong> success; stable recovery.
+    <br>
+    <strong>Dynamic Push‑T:</strong> Multiple drag‑style disturbances during pushing—<strong>100%</strong> success.
+    <br>
+    <strong>Overall:</strong> <strong>95.0%</strong> average success across tested scenarios, indicating reliable recovery under unstructured perturbations.
+  </p>
 
 <h1 id="Zero-shot-adaptation">Zero-shot adaptation</h1>
   <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
@@ -1520,8 +1858,18 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         </div>
     </div>
   </div>
-  
-
+  <p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
+    <strong>Takeaway:</strong>
+    <br>
+    <strong>Dynamic Push‑T:</strong> Large friction changes—<strong>100%</strong>; added distractor shapes—<strong>80%</strong>.
+    <br>
+    <strong>Agile Bowling:</strong> Floor property changes—<strong>100%</strong>.
+    <br>
+    <strong>Pouring:</strong> Granular (nuts) → liquid (water)—<strong>90%</strong>.
+  </p>
+  <p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
+    <strong>Average 92.5%</strong> success across four change types <strong>without retraining</strong>.
+  </p>
 
   <h1 id="Few-shot-adaptation">Few-shot adaptation</h1>
   <!-- <h1 id="whole-body-manipulation">Whole-Body Manipulation</h1> -->
@@ -1579,7 +1927,18 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         </div>
     </div>
   </div>
-
+  <p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
+    <strong>Takeaway:</strong>
+    <br>
+    <strong>Soft‑towel Folding:</strong> New towel materials—<strong>100%</strong>.
+    <br>
+    <strong>Agile Bowling:</strong> Inverted pin arrangement—<strong>100%</strong>.
+    <br>
+    <strong>Pouring:</strong> New container geometry—<strong>60%</strong>.
+  </p>
+  <p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
+    <strong>Average 86.7%</strong> with only <strong>1–3 hours</strong> of additional training.
+  </p>
   <h1 id="Training-efficiency">Training efficiency</h1>
   <div class="task-row">
       <div class="task-column-large">
@@ -1599,6 +1958,11 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
           </div>
       </div>
     </div>
+    <p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
+        <strong>Takeaway:</strong>
+        <br>
+        The policy achieves consistent 100% success after approximately 200 episodes of on-policy rollouts.
+    </p>
     <h1 id="Human-vs.-Robots">Human vs. Robots</h1>
     <div class="task-row">
         <div class="task-column-large">
@@ -1607,7 +1971,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                     <!-- 正确的 embed URL（替换 VIDEO_ID） -->
                     <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
                         <iframe class="content-video"
-                                src="https://www.youtube-nocookie.com/embed/TlVighZW-I8?rel=0"
+                                src="https://www.youtube.com/embed/ssH_Dv7WUsY?rel=0"
                                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen
@@ -1625,7 +1989,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                     <!-- 正确的 embed URL（替换 VIDEO_ID） -->
                     <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
                         <iframe class="content-video"
-                                src="https://www.youtube-nocookie.com/embed/myB1oUqiEOs?rel=0"
+                                src="https://www.youtube.com/embed/tNVrfLVRf4w?rel=0"
                                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen
@@ -1636,8 +2000,39 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
             </div>
         </div>
       </div>
-
+      <p style="font-size: 1.2em; font-weight: bold; line-height: 1.6;">
+        <strong>Takeaway:</strong>
+        <br>
+        1) he robot achieved more successful bowling trials than the five human participants under the same number of attempts,  25 successful trials (robot) vs. 14 successful trials (human).
+        <br>
+        2) For Push-T, the robot achieved more successful trials than expert human and beginner human at the same wall-clock time, 20 successful trials (robot) vs. 17 successful trials (expert) vs. 13 successful trials (beginner).
+    </p>
       <h1 id="Execution-Efficiency">Execution Efficiency</h1>
+      <div class="task-row">
+        <div class="task-column-large">
+            <div class="video_container_wrapper1">
+                <div class="video_container">
+                    <!-- 本地视频播放器 -->
+                    <div class="youtube-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                        <video id="execution-efficiency-video" class="content-video"
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                controls
+                                preload="metadata"
+                                loading="lazy">
+                            <source id="execution-efficiency-source" src="RL100_files/our_tasks/folding_execution_time.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="overlay-clean" id="execution-efficiency-title">Execution Efficiency - Folding</div>
+                </div>
+            </div>
+            <!-- 视频切换按钮 -->
+            <div class="video-switch-buttons">
+                <button class="video-switch-btn active" onclick="switchExecutionVideo(0)">Folding</button>
+                <button class="video-switch-btn" onclick="switchExecutionVideo(1)">Juicing</button>
+                <button class="video-switch-btn" onclick="switchExecutionVideo(2)">Unscrewing</button>
+            </div>
+        </div>
+      </div>
       <div class="task-row">
           <div class="task-column-large">
               <div class="image_container_wrapper">
@@ -1655,6 +2050,10 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         2) Single action vs. action chunking: single-step control mode is used when a fast closed-loop reaction is required
         <br>
         while action chunking is preferred for coordination-heavy or high precision tasks where smoothing mitigates jitter and limits error compounding.
+        <br>
+        * Execution efficiency is defined as the robot’s average task completion time. For fair comparison, we report this metric only on action-chunking tasks. 
+        Single-step control (DDIM/CM) operates at the same inference rate, system-capped at 30 Hz (e.g., by the L515 camera), 
+        so runtime is dominated by hardware rather than algorithmic differences.
     </p>
       <h1 id="Easter-egg">Easter egg</h1>
       <div class="task-row">
@@ -1921,7 +2320,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         if (speedSection.classList.contains('hidden')) {
             // Show 1X speed videos
             speedSection.classList.remove('hidden');
-            toggleBtn.textContent = 'Click to switch to normal speed demo';
+            toggleBtn.textContent = 'Click to switch to accelerating demo';
             toggleBtn.classList.add('active');
             
             // Scroll to the 1X speed section
@@ -1932,6 +2331,66 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
             toggleBtn.textContent = 'Click to switch to 1x speed demo';
             toggleBtn.classList.remove('active');
         }
+    }
+    // Baseline toggle function
+    function toggleBaselineSpeed() {
+        const dp3Section = document.getElementById('dp3-section');
+        const baseline2DSection = document.getElementById('baseline-1x-section');
+        const toggleBtn = document.getElementById('baseline-toggle-btn');
+
+        // Check which section is currently visible
+        const isDP3Visible = !dp3Section.classList.contains('hidden');
+        const is2DVisible = !baseline2DSection.classList.contains('hidden');
+
+        if (isDP3Visible) {
+            // Currently showing DP3, switch to 2D DP
+            dp3Section.classList.add('hidden');
+            baseline2DSection.classList.remove('hidden');
+            toggleBtn.textContent = 'Click to switch to DP3';
+            toggleBtn.classList.add('active');
+
+            // Scroll to the 2D DP section
+            baseline2DSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            // Currently showing 2D DP, switch to DP3
+            baseline2DSection.classList.add('hidden');
+            dp3Section.classList.remove('hidden');
+            toggleBtn.textContent = 'Click to switch to 2D DP';
+            toggleBtn.classList.remove('active');
+
+            // Scroll to the DP3 section
+            dp3Section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // Execution Efficiency video switching function
+    function switchExecutionVideo(index) {
+        const videoSources = [
+            { src: 'RL100_files/our_tasks/folding_execution_time.mp4', title: 'Execution Efficiency - Folding' },
+            { src: 'RL100_files/our_tasks/juicing_execution_effi.mp4', title: 'Execution Efficiency - Juicing' },
+            { src: 'RL100_files/our_tasks/interesting_findings.mp4', title: 'Execution Efficiency - Unscrewing' }
+        ];
+        
+        const video = document.getElementById('execution-efficiency-video');
+        const source = document.getElementById('execution-efficiency-source');
+        const title = document.getElementById('execution-efficiency-title');
+        const buttons = document.querySelectorAll('.video-switch-btn');
+        
+        // Update video source
+        source.src = videoSources[index].src;
+        video.load();
+        
+        // Update title
+        title.textContent = videoSources[index].title;
+        
+        // Update button active state
+        buttons.forEach((btn, i) => {
+            if (i === index) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
     }
 </script>
 

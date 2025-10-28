@@ -800,8 +800,7 @@ hr.rounded {
 }
 
 #overview > .dark_mode > h1 {
-    color: rgba(255, 255, 255, 0.92);
-!important;
+    color: rgba(255, 255, 255, 0.92) !important;
 }
 
 /* Video slider */
@@ -1716,6 +1715,48 @@ a:hover {
     .related-work-item h3 {
         font-size: 1.1em;
     }
+    
+    .video-switch-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .video-switch-btn {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
 }
 
+/* 视频切换按钮样式 */
+.video-switch-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.video-switch-btn {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: "Source Serif 4", serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-switch-btn:hover {
+    background-color: white;
+    border-color: #2E2D29;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-switch-btn.active {
+    background-color: #2E2D29;
+    color: white;
+    border-color: #2E2D29;
+}
 
