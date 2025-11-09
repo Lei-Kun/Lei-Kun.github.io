@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unified Policy Evaluation & Improvement (On/Off-Policy)</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="A practical two-axis view of RL by data source and update schedule, with unified policy evaluation & improvement forms, and a robotics-focused discussion on data flywheels and multi-step vs iterative RL." />
+  <meta property="og:title" content="Unified Policy Evaluation & Improvement (On/Off-Policy)" />
+  <meta property="og:description" content="Classifying RL by data source and update schedule, with unified equations and practical guidance for robotics." />
+  <meta property="og:type" content="article" />
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {inlineMath: [['\\(','\\)'], ['$', '$']], displayMath: [['\\[','\\]']]},
+      svg: {fontCache: 'global'}
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <style>
+    :root{
+      --bg:#0b1020; --fg:#e8edf7; --muted:#9fb0cc; --accent:#7cc4ff;
+      --card:#121a33; --border:#223060; --chip:#0e1633;
+      --success:#1ec28b; --warn:#f59e0b;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#ffffff; --fg:#111827; --muted:#6b7280; --accent:#2563eb; --card:#f8fafc; --border:#e5e7eb; --chip:#eef2ff; --success:#10b981; --warn:#d97706; }
+    }
+
+    html,body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      scroll-behavior:smooth;
+    }
+    a{color:var(--accent); text-decoration:none}
+
+    /* 容器与正文宽度 */
+    .wrap{max-width: 1060px; margin: 56px auto; padding: 0 24px 96px;}
+    .prose{max-width: 74ch; margin-inline:auto;}
+    .prose-wide{max-width: 980px; margin-inline:auto;}
+
+    /* 排版节奏与字号 */
+    :where(p, li){line-height:1.9; font-size:1.06rem; letter-spacing:.01em; text-wrap:pretty;}
+    p.lead{color:var(--muted); margin: 10px auto 22px; line-height:1.85; font-size:1.08rem;}
+    header h1{margin:0 0 16px; font-size: clamp(28px,3.9vw,42px);}
+    h2{margin:44px auto 14px; font-size: clamp(22px,2.6vw,30px);}
+    h3{margin:26px auto 10px; font-size: clamp(18px,2.3vw,22px);}
+    section{padding: 6px 0;}
+    section + section{margin-top: 38px;}
+
+    nav.toc{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:16px 18px; margin:22px auto 34px; max-width:74ch;}
+    nav.toc a{display:inline-block; margin:6px 12px 0 0; font-size:14px}
+
+    .note{color:var(--muted);}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:22px; margin:16px 0;}
+    .cols{display:grid; grid-template-columns: 1fr 1fr; gap:22px; margin: 12px 0 8px;}
+    ul{margin:8px 0 0 0; padding-left:22px}
+    li{margin:8px 0}
+    .chip{display:inline-block; padding:4px 10px; border-radius:999px; background:var(--chip); border:1px solid var(--border); color:var(--accent); font-size:12px}
+    .backtop{display:inline-block; margin-top:18px; font-size:14px}
+    footer{margin-top:40px; color:var(--muted); font-size:14px}
+    .kicker{color:var(--success); font-weight:600; font-size:0.95rem; letter-spacing:.02em}
+    .warn{color:var(--warn); font-weight:600}
+    .hr{height:1px;background:var(--border);margin:28px 0;border:0;}
+
+    /* 图片：按比例自适应，不拉伸；限高避免巨图挤压正文 */
+    figure{margin:22px auto;}
+    figure.auto-fit img{
+      display:block; width:min(100%, 980px); height:auto; max-height:60vh;
+      object-fit:contain; border:1px solid var(--border); background:var(--card);
+      border-radius:14px; padding:8px; margin-inline:auto;
+    }
+    figure.auto-fit figcaption{font-size:14px; color:var(--muted); margin-top:6px;}
+
+    /* 参考文献块更易读 */
+    .publication{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; margin:16px 0;}
+    .publication .row-text :where(a){text-decoration:none}
+    .publication .publication-title{font-weight:700}
+
+    /* 移动端优化：更大行高、单列布局、减少边距 */
+    @media (max-width: 760px){
+      .wrap{margin: 36px auto; padding:0 18px 72px;}
+      :where(p, li){line-height:1.95; font-size:1.02rem;}
+      .cols{grid-template-columns: 1fr; gap:16px;}
+      .card{padding:18px}
+      nav.toc{padding:14px 16px}
+    }
+  </style>
+</head>
+<body>
+  <a id="top"></a>
+  <div class="wrap">
+
+    <header class="prose">
+      <h1>A Practical Way to Classify RL: by Data Source and by Update Schedule</h1>
+      <p class="lead">
+        Reinforcement learning can look like a forest of algorithms, but two simple axes make the landscape manageable.
+        The first is the <strong>data source</strong>—where trajectories come from. The second is the <strong>update schedule</strong>—how often we alternate
+        <strong>policy evaluation</strong> (estimating the value of a policy) and <strong>policy improvement</strong> (updating the policy using that estimate).
+        This perspective provides a consistent vocabulary for both classic and modern methods, and it maps cleanly onto real constraints in robotics such as safety, sample efficiency, and reliability.
+      </p>
+
+      <nav class="toc" aria-label="Table of contents">
+        <a href="#data">Data-source perspective</a>
+        <a href="#unified">Unified equations</a>
+        <a href="#schedule">Update-schedule perspective</a>
+        <a href="#robotics">Robotic foundation models</a>
+        <a href="#takeaways">Key takeaways</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="data" aria-labelledby="heading-data" class="prose">
+        <h2 id="heading-data">Data-source perspective</h2>
+        <figure class="auto-fit">
+            <img src="rl_off_on.jpg" alt="Iterative vs multi-step vs one-step" loading="lazy" />
+            <figcaption>On-policy vs Off-policy vs Offline RL.</figcaption>
+          </figure>
+        <p>
+          <strong>On-policy</strong> learning collects trajectories using the current policy and updates on those fresh rollouts, which keeps the training distribution aligned but can be sample-hungry.
+          <strong>Off-policy</strong> learning reuses past experience from a replay buffer gathered by some behavior policy, trading alignment for efficiency and requiring corrections or regularization.
+          <strong>Offline RL</strong> goes further by training from a fixed dataset without any additional interaction.
+          With this setup in mind, we can write unified forms for <em>policy evaluation</em> and <em>policy improvement</em> that cover a wide range of algorithms.
+        </p>
+      </section>
+
+      <section id="unified" aria-labelledby="heading-unified">
+        <div class="prose">
+          <h2 id="heading-unified">Unified policy evaluation &amp; improvement</h2>
+        </div>
+
+        <div class="prose-wide">
+          <h3>Policy evaluation (unified)</h3>
+          <div class="card">
+            \[
+            \hat Q^{k+1}
+            = \arg\min_{Q}\;
+            \mathbb{E}_{(s,a)\sim w}
+            \Big[
+              \big(
+              \underbrace{T^{\pi^k}\hat Q}_{\displaystyle r+\gamma\,\mathbb{E}_{s'|s,a}\,\mathbb{E}_{a'\sim\pi^k(\cdot|s')}[\hat Q(s',a')]}
+              - Q(s,a)
+              \big)^2
+            \Big].
+            \]
+          </div>
+
+          <h3>Policy improvement (unified)</h3>
+          <div class="card">
+            \[
+            \pi^{k+1}
+            =
+            \arg\max_{\pi}\;
+            \mathbb{E}_{s\sim \rho,\,a\sim \pi}\big[\hat Q^{k+1}(s,a)\big]
+            - \beta\,\mathbb{E}_{s\sim \rho}\big[D_{\mathrm{KL}}(\pi \,\|\, \pi_{\mathrm{ref}})\big].
+            \]
+          </div>
+        </div>
+
+        <div class="cols">
+          <div class="card">
+            <span class="chip">on-policy</span>
+            <ul>
+              <li><strong>Data/source:</strong> trajectories from the current policy \(\pi^k\) (distribution \(d^{\pi^k}\)).</li>
+              <li><strong>Evaluation:</strong> choose \(w=d^{\pi^k}\); realize \(\mathbb{E}_{a'\sim\pi^k}\) by direct sampling \(a'\sim\pi^k(\cdot|s')\) (SARSA) or expected backup \(\sum_{a'} \pi^k(a'|s')\,\hat Q(s',a')\) (Expected SARSA).</li>
+              <li><strong>Improvement:</strong> choose \(\rho=d^{\pi^k}\), \(\pi_{\mathrm{ref}}=\pi^k\) → TRPO/PPO-style trust region.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="chip">off-policy / offline</span>
+            <ul>
+              <li><strong>Data/source:</strong> replay/offline from behavior \(\mu\) (distribution \(d^{\mu}\)), with \(\mu\neq\pi^k\).</li>
+              <li><strong>Evaluation:</strong> choose \(w=d^{\mu}\); approximate \(\mathbb{E}_{a'\sim\pi^k}\) via <em>IS</em> (\(\delta_t=r_t+\gamma\rho_{t+1}\hat Q(s_{t+1},a_{t+1})-\hat Q(s_t,a_t)\), \(\rho_{t+1}=\frac{\pi^k(a_{t+1}|s_{t+1})}{\mu(a_{t+1}|s_{t+1})}\)), <em>traces/projected</em> (TD(\(\lambda\)), Retrace, V-trace, IQL/FQE), or <em>control backup</em> \(y=r+\gamma\max_{a'}\hat Q(s',a')\) (Q-learning).</li>
+              <li><strong>Improvement:</strong> choose \(\rho=d^{\mu}\), \(\pi_{\mathrm{ref}}=\mu\) → behavior-regularized updates (BRAC/AWAC). <br>
+                <em>SAC mapping:</em> use soft Bellman \(\mathbb{E}_{a'\sim\pi}[\min_i Q(s',a')-\alpha\log\pi(a'|s')]\), and set \(\pi_{\mathrm{ref}}=\text{Uniform}\), \(\beta=\alpha\) (entropy regularization).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="prose"><a class="backtop" href="#top">↑ Back to top</a></div>
+        <div class="hr"></div>
+      </section>
+
+      <section id="schedule" aria-labelledby="heading-schedule" class="prose">
+        <h2 id="heading-schedule">Update-schedule perspective</h2>
+
+        <figure class="auto-fit">
+          <img src="iterative-multi-one.jpg" alt="Iterative vs multi-step vs one-step" loading="lazy" />
+          <figcaption>Iterative vs multi-step vs one-step schedules.</figcaption>
+        </figure>
+
+        <p>
+          Focusing solely on how often we alternate evaluation and improvement yields a second, surprisingly useful taxonomy.
+          If we repeat these components many times with small steps and ongoing interaction, we get <strong>iterative RL</strong>, which is the typical online setting and tends to be stable.
+          If we perform one evaluation followed by a single improvement on a fixed dataset, we get a <strong>one-step RL</strong> method—a natural choice when interaction is severely limited—though it can be overly conservative and suffer from <em>exploration isolation</em> at deployment.
+          Between the two sits <strong>multi-step RL</strong>: a handful of evaluation–improvement rounds with safeguards such as trust regions, behavior regularization, or offline policy evaluation (OPE) gates.
+          This middle ground is often the most pragmatic balance—less timid than one-step, yet less risky than fully aggressive iteration—providing a better trade-off between conservatism (stability) and exploration (which can occasionally crash).
+        </p>
+      </section>
+
+      <section id="robotics" aria-labelledby="heading-robotics" class="prose">
+        <h2 id="heading-robotics">Robotic foundation models and the data flywheel</h2>
+        <p>
+          This schedule-centric view lines up well with the training practice of modern robotic foundation models such as Generalist’s newly announced GEN-0 and Pi’s pi_0.5.
+          These systems grow through a <strong>data flywheel</strong>: continually aggregating new tasks and scenarios into a unified corpus, then retraining or fine-tuning at scale.
+          In that setting, <strong>multi-step</strong> updates are a natural fit. Each cycle makes a small, safety-gated improvement—conservative enough to avoid distribution crashes, yet with room for controlled exploration as the corpus expands.
+        </p>
+        <p>
+          As the model strengthens and approaches bottlenecks—either because it must <strong>surpass human ceilings</strong> on certain capabilities or <strong>align tightly</strong> with human performance—it's appropriate to hand off to <strong>iterative</strong> online RL on targeted objectives.
+          There, frequent evaluate–improve alternation and carefully designed interactions provide the sharper feedback needed to push the frontier.
+          We have seen this play out in practice in <em>rl-100</em>–style setups: multi-step updates deliver reliable gains on limited data, and a small amount of iterative online RL on selected metrics can raise the ceiling further without compromising safety.
+        </p>
+
+        <h3>References</h3>
+        <div class="publication">
+          <div class="row-text">
+            <a class="publication-title" href="https://arxiv.org/abs/2510.14830">RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning</a><br/>
+            <span class="bold">Kun Lei*</span>, Huanyu Li*, Dongjie Yu*, Zhenyu Wei*, Lingxiao Guo, Zhennan Jiang, Ziyu Wang, Shiyu Liang, Huazhe Xu.<br/>
+            <a href="https://lei-kun.github.io/RL-100/">project page</a> /
+            <a href="https://arxiv.org/abs/2510.14830">arXiv</a> /
+            <a href="#">code</a> /
+            <a href="https://x.com/kunlei15/status/1978840280297255124">twitter</a> /
+            <a href="https://lei-kun.github.io/blogs/RL100.html">blog</a> /
+            <a href="https://zhuanlan.zhihu.com/p/1961019618517836122">Zhihu</a>
+          </div>
+        </div>
+
+        <div class="publication">
+          <div class="row-text">
+            <a class="publication-title" href="https://openreview.net/forum?id=tbFBh3LMKi&noteId=V1KfZesJ3w">Uni-O4: Unifying Online and Offline Deep Reinforcement Learning with Multi-Step On-Policy Optimization</a><br/>
+            <span class="bold">Kun Lei</span>, Zhengmao He*, Chenhao Lu*, Kaizhe Hu, Yang Gao, Huazhe Xu.<br/>
+            <span class="italic">International Conference on Learning Representations (ICLR)</span>, 2024<br/>
+            <a href="https://lei-kun.github.io/uni-o4/">project page</a> /
+            <a href="https://arxiv.org/abs/2311.03351">arXiv</a> /
+            <a href="https://github.com/Lei-Kun/Uni-o4">code</a> /
+            <a href="https://twitter.com/kunlei15/status/1721885793369964703">twitter</a>
+          </div>
+        </div>
+
+        <div class="publication">
+          <div class="row-text">
+            <a class="publication-title" href="https://openreview.net/forum?id=3c13LptpIph">Behavior Proximal Policy Optimization</a><br/>
+            Zifeng Zhuang*, <span class="bold">Kun Lei*</span>, Jinxin Liu, Donglin Wang, Yilang Guo.<br/>
+            <span class="italic">International Conference on Learning Representations (ICLR)</span>, 2023<br/>
+            <a href="https://openreview.net/forum?id=3c13LptpIph">paper</a> /
+            <a href="https://arxiv.org/abs/2302.11312">arXiv</a> /
+            <a href="https://github.com/Dragon-Zhuang/BPPO">code</a>
+          </div>
+        </div>
+
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </section>
+
+      <section id="takeaways" aria-labelledby="heading-takeaways" class="prose">
+        <h2 id="heading-takeaways">Key takeaways</h2>
+        <p>
+          Classifying methods by <strong>data source</strong> and <strong>update schedule</strong> is more than tidy bookkeeping; it’s a practical recipe for choosing algorithms under real constraints.
+          With plentiful simulation or interaction, iterative online methods make sense. With scarce or risky interaction, start with multi-step updates fed by the data flywheel, then switch to targeted iterative RL when you need to exceed human performance or close alignment gaps.
+          This two-axis frame keeps trade-offs explicit—stability versus exploration, efficiency versus expressivity—and helps robotic systems progress in a controlled, compounding way.
+        </p>
+      </section>
+    </main>
+
+    <footer class="prose">
+      <div>© 2025 • Last updated: <time datetime="2025-11-09">Nov 9, 2025</time></div>
+    </footer>
+  </div>
+</body>
+</html>
