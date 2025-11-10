@@ -197,8 +197,11 @@
 
         <p>
           Focusing solely on how often we alternate evaluation and improvement yields a second, surprisingly useful taxonomy.
-          If we repeat these components many times with small steps and ongoing interaction, we get <strong>iterative RL</strong>, which is the typical online setting and tends to be stable.
-          If we perform one evaluation followed by a single improvement on a fixed dataset, we get a <strong>one-step RL</strong> method—a natural choice when interaction is severely limited—though it can be overly conservative and suffer from <em>exploration isolation</em> at deployment.
+          If we repeat these components many times with small steps and ongoing interaction, we get <strong>iterative RL</strong>, 
+          which is the typical online setting.
+          If we perform one evaluation followed by a single improvement on a fixed dataset or with data flywheel, 
+          we get a <strong>one-step RL</strong> method—a natural choice when interaction is severely limited—though it can be overly conservative and 
+          suffer from <em>exploration isolation</em> at deployment.
           Between the two sits <strong>multi-step RL</strong>: a handful of evaluation–improvement rounds with safeguards such as trust regions, behavior regularization, or offline policy evaluation (OPE) gates.
           This middle ground is often the most pragmatic balance—less timid than one-step, yet less risky than fully aggressive iteration—providing a better trade-off between conservatism (stability) and exploration (which can occasionally crash).
         </p>
@@ -215,7 +218,11 @@
           As the model strengthens and approaches bottlenecks—either because it must <strong>surpass human ceilings</strong> on certain capabilities or <strong>align tightly</strong> with human performance—it's appropriate to hand off to <strong>iterative</strong> online RL on targeted objectives.
           There, frequent evaluate–improve alternation and carefully designed interactions provide the sharper feedback needed to push the frontier.
           We have seen this play out in practice in <em>rl-100</em>–style setups: multi-step updates deliver reliable gains on limited data, and a small amount of iterative online RL on selected metrics can raise the ceiling further without compromising safety.
+        
+          <!-- Another reason why <em>rl-100</em> pipeline is extremely effective for robotic fundation models is that it focuses on policy learning rather than using value's gradient to guide the policy's update.
+          It starts from supervised learning to learn from demonstrations -->
         </p>
+        
 
         <h3>References</h3>
         <div class="publication">
