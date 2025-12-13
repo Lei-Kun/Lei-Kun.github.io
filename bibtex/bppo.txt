@@ -1,0 +1,8 @@
+@inproceedings{
+zhuang2023behavior,
+title={Behavior Proximal Policy Optimization },
+author={Zifeng Zhuang and Kun LEI and Jinxin Liu and Donglin Wang and Yilang Guo},
+booktitle={The Eleventh International Conference on Learning Representations },
+year={2023},
+url={https://openreview.net/forum?id=3c13LptpIph}
+}

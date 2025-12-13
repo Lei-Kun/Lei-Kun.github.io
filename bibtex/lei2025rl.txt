@@ -1,0 +1,7 @@
+@article{lei2025rl,
+  title={Rl-100: Performant robotic manipulation with real-world reinforcement learning},
+  author={Lei, Kun and Li, Huanyu and Yu, Dongjie and Wei, Zhenyu and Guo, Lingxiao and Jiang, Zhennan and Wang, Ziyu and Liang, Shiyu and Xu, Huazhe},
+  journal={arXiv preprint arXiv:2510.14830},
+  year={2025}
+}
+
