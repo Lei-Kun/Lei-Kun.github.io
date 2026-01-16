@@ -1,0 +1,17 @@
+@ARTICLE{2026arXiv260107821L,
+       author = {{Li}, Huanyu and {Lei}, Kun and {Zang}, Sheng and {Hu}, Kaizhe and {Liang}, Yongyuan and {An}, Bo and {Li}, Xiaoli and {Xu}, Huazhe},
+        title = "{Failure-Aware RL: Reliable Offline-to-Online Reinforcement Learning with Self-Recovery for Real-World Manipulation}",
+      journal = {arXiv e-prints},
+     keywords = {Robotics, Artificial Intelligence, Machine Learning},
+         year = 2026,
+        month = jan,
+          eid = {arXiv:2601.07821},
+        pages = {arXiv:2601.07821},
+          doi = {10.48550/arXiv.2601.07821},
+archivePrefix = {arXiv},
+       eprint = {2601.07821},
+ primaryClass = {cs.RO},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2026arXiv260107821L},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+

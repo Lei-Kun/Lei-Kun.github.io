@@ -126,6 +126,19 @@
     color: #004499;
 }
 
+.publication.highlighted {
+    background-color: #e3f2fd;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 780px;
+    width: 100%;
+}
+
+.publication.highlighted .row-text {
+    max-width: 566px;
+}
+
 .news-videos-container {
     display: flex;
     gap: 20px;
@@ -316,6 +329,25 @@
         <p>Papers sorted by recency, * indicates equal contribution.</p>
         <div class="publication row clearfix">
             <div class="row-media">
+                <video autoplay muted loop style="width: 160px; height: 90px; object-fit: cover;">
+                    <source src="my_files/farl.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="row-text">
+                <a class="publication-title bold" href="https://arxiv.org/abs/2601.07821">Failure-Aware RL: Reliable Offline-to-Online Reinforcement Learning with Self-Recovery for Real-World Manipulation</a><br/>
+                Huanyu Li* , <span class="bold">Kun Lei*</span>, Sheng Zang, Kaizhe Hu, Yongyuan Liang, Bo An, Xiaoli Li, Huazhe Xu<br/>
+                <span class="italic">arXiv preprint</span>, 2026<br/>
+                <div class="publication-links">
+                    <a class="btn btn-orange" href="https://failure-aware-rl.github.io/">Project Page</a> /
+                    <a class="btn" href="">Code</a> /
+                    <a class="btn btn-red" href="https://arxiv.org/abs/2601.07821">arXiv</a> /
+                    <a class="btn" href="https://arxiv.org/pdf/2601.07821.pdf">Paper</a> /
+                    <a class="btn" href="bibtex/farl.txt">bib</a>
+                </div>
+            </div>
+        </div>
+        <div class="publication row clearfix highlighted">
+            <div class="row-media">
                 <video controls autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
                     <source src="RL-100/RL100_files/our_tasks/teaser_video.mp4" type="video/mp4">
                 </video>
@@ -324,10 +356,10 @@
                 <a class="publication-title bold" href="https://arxiv.org/abs/2510.14830">RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning</a><br/>
                 <span class="bold">Kun Lei*</span>, Huanyu Li*, Dongjie Yu*, Zhenyu Wei*, Lingxiao Guo, Zhennan Jiang, Ziyu Wang, Shiyu Liang, Huazhe Xu. <br/>
                 <!-- <span class="italic">International Conference on Learning Representations (<a href="https://openreview.net/forum?id=tbFBh3LMKi&noteId=V1KfZesJ3w">ICLR</a>)</span>, 2024 </span> <br/> <a href="https://openreview.net/forum?id=tbFBh3LMKi&noteId=V1KfZesJ3w">with a nice rating 6688</a> /  -->
-                <a class="btn btn-orange" href="https://lei-kun.github.io/RL-100/">project page</a> / <a class="btn btn-red" href="https://arxiv.org/abs/2510.14830">arXiv</a> / <a class="btn" href="">code</a> / <a class="btn" href="https://x.com/kunlei15/status/1978840280297255124">twitter</a> / <a class="btn" href="https://lei-kun.github.io/blogs/RL100.html">blog</a> / <a class="btn" href="https://zhuanlan.zhihu.com/p/1961019618517836122">知乎</a> / <a class="btn" href="bibtex/lei2025rl.txt">bib</a> 
+                <a class="btn btn-orange" href="https://lei-kun.github.io/RL-100/">project page</a> / <a class="btn btn-red" href="https://arxiv.org/abs/2510.14830">arXiv</a> / <a class="btn" href="">code</a> / <a class="btn" href="https://x.com/kunlei15/status/1978840280297255124">twitter</a> / <a class="btn" href="https://lei-kun.github.io/blogs/RL100.html">blog</a> / <a class="btn" href="https://zhuanlan.zhihu.com/p/1961019618517836122">知乎</a> / <a class="btn" href="bibtex/lei2025rl.txt">bib</a> / <a class="btn" href="https://www.bilibili.com/video/BV1UurLBoEJK/">talk 1</a> / <a class="btn" href="https://twitter.com/RoboPapers/status/2011453253314134277">talk 2</a> 
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix highlighted">
             <div class="row-media" style="background-image: url(my_files/uni-o44.gif);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://openreview.net/forum?id=tbFBh3LMKi&noteId=V1KfZesJ3w">Uni-O4: Unifying Online and Offline Deep Reinforcement Learning with Multi-Step On-Policy Optimization</a><br/>
@@ -336,7 +368,7 @@
                 <a class="btn btn-orange" href="https://lei-kun.github.io/uni-o4/">project page</a> / <a class="btn btn-red" href="https://arxiv.org/abs/2311.03351">arXiv</a> / <a class="btn" href="https://github.com/Lei-Kun/Uni-o4">code</a> / <a class="btn" href="https://twitter.com/kunlei15/status/1721885793369964703">twitter</a> / <a class="btn" href="bibtex/unio4.txt ">bib</a> 
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix highlighted">
             <div class="row-media" style="background-image: url(my_files/bppo1.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://openreview.net/forum?id=3c13LptpIph">Behavior proximal policy optimization</a><br/>
