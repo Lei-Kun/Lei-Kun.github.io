@@ -125,6 +125,42 @@
 .news-toggle:hover {
     color: #004499;
 }
+
+.news-videos-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.video-embed-container {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-embed-container blockquote {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+}
 </style>
 <!-- <style>
     body {
@@ -221,6 +257,9 @@
     <div>
         <h2 class="noselect">News</h2>
             <div class="news-visible">
+                <div class="news-visible">
+                <p><span class="blog-date">2025.01.14</span> I gave an invited talk at <a href="https://space.bilibili.com/604515161?spm_id_from=333.788.upinfo.detail.click">RLChina</a> - [<a href="my_files/RL-100.pdf">PDF</a> / <a href="https://player.bilibili.com/player.html?bvid=BV1UurLBoEJK&page=1&high_quality=1&danmaku=0">Video</a>] </p>
+                <p><span class="blog-date">2025.12.4</span> I gave an invited talk at <a href="https://x.com/RoboPapers">RoboPapers</a> - [<a href="my_files/RL-100.pdf">PDF</a> / <a href="https://x.com/RoboPapers/status/2011453253314134277">Video</a>] </p>
                 <p><span class="blog-date">2025.12.3</span> I gave an invited talk at <a href="https://rpl.cs.utexas.edu/">Robot Perception and Learning Lab</a> in UT Austin</p>
                 <p><span class="blog-date">2025.12.1</span> I gave an invited talk at <a href="https://seed.bytedance.com/zh/">ByteDance Seed</a> </p>
                 <p><span class="blog-date">2025.11.28</span> I gave an invited talk at <a href="https://www.msra.cn/">Microsoft Research Asia (MSRA)</a> </p>
@@ -230,9 +269,18 @@
             </div>
             <div class="news-more" id="newsMore">
                 <p><span class="blog-date">2025.09</span> I enrolled in the joint CS PhD program between Shanghai Qizhi institute and Shanghai Jiao Tong University </p>
-                <p><span class="blog-date">2024.08-10</span> I enrolled in the CS PhD program at the <a href="https://cse.washu.edu/index.html"> WUSTL</a> and then quit for RL-100 research </p>
+                <p><span class="blog-date">2024.08-10</span> I enrolled in the CS PhD program at the <a href="https://cse.washu.edu/index.html"> WUSTL</a> and then quitted for RL-100 research </p>
             </div>
             <div class="news-toggle" id="newsToggle" onclick="toggleNews()">Show more</div>
+            <div class="news-videos-container">
+                <div class="video-embed-container">
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV1UurLBoEJK&page=1&high_quality=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                </div>
+                <div class="video-embed-container">
+                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚀 RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning<br><br>A comprehensive talk by Kun Lei on achieving near-perfect manipulation performance through a three-stage framework: imitation learning → iterative offline RL → last-mile online RL. <a href="https://t.co/example">pic.twitter.com/example</a></p>&mdash; RoboPapers (@RoboPapers) <a href="https://twitter.com/RoboPapers/status/2011453253314134277">December 4, 2025</a></blockquote>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
     </div>
     
     <div>
