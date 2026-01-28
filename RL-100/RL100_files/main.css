@@ -803,6 +803,46 @@ hr.rounded {
     color: rgba(255, 255, 255, 0.92) !important;
 }
 
+/* First round review section - 与 #overview 相同的样式 */
+#first-round-review {
+    padding-top: 1vw;
+}
+
+#first-round-review h1 {
+    color: #2E2D29;
+    font-family: "Source Serif 4", serif;
+    font-weight: bolder;
+    font-size: 2.0vw;
+    padding-top: 1.5vw;
+    width: 70.77%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 1vw;
+}
+
+#first-round-review h2 {
+    color: #2E2D29;
+    font-family: "Source Serif 4", serif;
+    font-weight: normal;
+    font-size: 1.7vw;
+    padding-top: 2vw;
+    width: 70.77%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* 视频下方的标题样式 */
+.video-caption-below {
+    color: #2E2D29;
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1vw;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 5px;
+}
+
 /* Video slider */
 
 @font-face {
