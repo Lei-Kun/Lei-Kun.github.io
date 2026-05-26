@@ -1,0 +1,9 @@
+@misc{yu2026zprl,
+  title={Beyond Action Residuals: Real-World Robot Policy Steering via Bottleneck Latent Reinforcement Learning},
+  author={Yu, Dongjie and Lei, Kun and Jiang, Zhennan and Pan, Jia and Xu, Huazhe},
+  year={2026},
+  eprint={2605.19919},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2605.19919}
+}
