@@ -110,10 +110,6 @@
     display: inline-block;
 }
 
-.news-more {
-    display: none;
-}
-
 .news-badge-new {
     display: inline-block;
     margin-left: 6px;
@@ -126,18 +122,6 @@
     font-weight: bold;
     line-height: 1.4;
     text-transform: uppercase;
-}
-
-.news-toggle {
-    cursor: pointer;
-    color: #0066cc;
-    text-decoration: underline;
-    margin-top: 8px;
-    display: inline-block;
-}
-
-.news-toggle:hover {
-    color: #004499;
 }
 
 .publication.highlighted {
@@ -284,26 +268,22 @@
 
     <div>
         <h2 class="noselect">News</h2>
-            <div class="news-visible">
-                <div class="news-visible">
-                <p><span class="blog-date">2026.07.23</span><span class="news-badge-new">New</span> RL-100 has been featured as the lead research article on the <a href="my_files/sr_feature/rl100_featured_science.png"><strong><em>Science</em></strong></a> and <a href="my_files/sr_feature/rl100_featured_sr.png"><strong><em>Science Robotics</em></strong></a> homepages!</p>
-                <p><span class="blog-date">2026.06.24</span><span class="news-badge-new">New</span> RL-100 has been accepted by <strong><em>Science Robotics</em></strong>!</p>
-                <p><span class="blog-date">2026.06.22</span><span class="news-badge-new">New</span> RL-100 code is now open-sourced! [<a href="https://github.com/Lei-Kun/RL-100">GitHub</a> / <a href="https://github.com/Lei-Kun/RL-100/blob/main/INSTALL.md">Install</a>]</p>
-                <p><span class="blog-date">2026.01.14</span> One paper accepted to ICRA 2026!</p>
-                <p><span class="blog-date">2026.01.14</span> I gave an invited talk at <a href="https://space.bilibili.com/604515161?spm_id_from=333.788.upinfo.detail.click">RLChina</a> - [<a href="my_files/RL-100.pdf">PDF</a> / <a href="https://player.bilibili.com/player.html?bvid=BV1UurLBoEJK&page=1&high_quality=1&danmaku=0">Video</a>] </p>
-                <p><span class="blog-date">2025.12.4</span> I gave an invited talk at <a href="https://x.com/RoboPapers">RoboPapers</a> - [<a href="my_files/RL-100.pdf">PDF</a> / <a href="https://x.com/RoboPapers/status/2011453253314134277">Video</a>] </p>
-                <p><span class="blog-date">2025.12.3</span> I gave an invited talk at <a href="https://rpl.cs.utexas.edu/">Robot Perception and Learning Lab</a> in UT Austin</p>
-                <p><span class="blog-date">2025.12.1</span> I gave an invited talk at <a href="https://seed.bytedance.com/zh/">ByteDance Seed</a> </p>
-                <p><span class="blog-date">2025.11.28</span> I gave an invited talk at <a href="https://www.msra.cn/">Microsoft Research Asia (MSRA)</a> </p>
-                <p><span class="blog-date">2025.11.13</span> I gave an invited talk at <a href="https://opendrivelab.com/">OpenDriveLab</a> in The University of Hong Kong (HKU)</p>
-                <p><span class="blog-date">2025.10.31</span> I gave an invited talk at <a href="https://linsats.github.io/">National University of Singapore</a> </p>
-                <p><span class="blog-date">2025.10.30</span> I gave an invited talk at <a href="https://jxwuyi.weebly.com/">Tsinghua University</a> </p>
+            <div class="news-list">
+                <p><span class="blog-date">2026.07.23</span><span class="news-badge-new">New</span> RL-100 was featured as the lead research article on the homepages of <a href="my_files/sr_feature/rl100_featured_science.png"><strong><em>Science</em></strong></a> and <a href="my_files/sr_feature/rl100_featured_sr.png"><strong><em>Science Robotics</em></strong></a>!</p>
+                <p><span class="blog-date">2026.06.24</span><span class="news-badge-new">New</span> RL-100 was accepted for publication in <strong><em>Science Robotics</em></strong>!</p>
+                <p><span class="blog-date">2026.06.22</span><span class="news-badge-new">New</span> The RL-100 code is now open source! [<a href="https://github.com/Lei-Kun/RL-100">GitHub</a> / <a href="https://github.com/Lei-Kun/RL-100/blob/main/INSTALL.md">Install</a>]</p>
+                <p><span class="blog-date">2026.01.14</span> One paper was accepted to ICRA 2026!</p>
+                <p><span class="blog-date">2026.01.14</span> I gave an invited talk at <a href="https://space.bilibili.com/604515161?spm_id_from=333.788.upinfo.detail.click">RLChina</a> - [<a href="my_files/RL-100.pdf">PDF</a> / <a href="https://player.bilibili.com/player.html?bvid=BV1UurLBoEJK&page=1&high_quality=1&danmaku=0">Video</a>].</p>
+                <p><span class="blog-date">2025.12.04</span> I gave an invited talk hosted by <a href="https://x.com/RoboPapers">RoboPapers</a> - [<a href="my_files/RL-100.pdf">PDF</a> / <a href="https://x.com/RoboPapers/status/2011453253314134277">Video</a>].</p>
+                <p><span class="blog-date">2025.12.03</span> I gave an invited talk at the <a href="https://rpl.cs.utexas.edu/">Robot Perception and Learning Lab</a> at UT Austin.</p>
+                <p><span class="blog-date">2025.12.01</span> I gave an invited talk at <a href="https://seed.bytedance.com/zh/">ByteDance Seed</a>.</p>
+                <p><span class="blog-date">2025.11.28</span> I gave an invited talk at <a href="https://www.msra.cn/">Microsoft Research Asia (MSRA)</a>.</p>
+                <p><span class="blog-date">2025.11.13</span> I gave an invited talk at the University of Hong Kong (HKU), hosted by <a href="https://opendrivelab.com/">OpenDriveLab</a>.</p>
+                <p><span class="blog-date">2025.10.31</span> I gave an invited talk at the <a href="https://linsats.github.io/">National University of Singapore</a>.</p>
+                <p><span class="blog-date">2025.10.30</span> I gave an invited talk at <a href="https://jxwuyi.weebly.com/">Tsinghua University</a>.</p>
+                <p><span class="blog-date">2025.09</span> I enrolled in the CS Ph.D. program jointly offered by the Shanghai Qizhi Institute and Shanghai Jiao Tong University.</p>
+                <p><span class="blog-date">2024.08-10</span> I enrolled in the CS Ph.D. program at <a href="https://cse.washu.edu/index.html">WUSTL</a> before leaving to focus on RL-100 research.</p>
             </div>
-            <div class="news-more" id="newsMore">
-                <p><span class="blog-date">2025.09</span> I enrolled in the joint CS PhD program between Shanghai Qizhi institute and Shanghai Jiao Tong University </p>
-                <p><span class="blog-date">2024.08-10</span> I enrolled in the CS PhD program at the <a href="https://cse.washu.edu/index.html"> WUSTL</a> and then quitted for RL-100 research </p>
-            </div>
-            <div class="news-toggle" id="newsToggle" onclick="toggleNews()">Show more</div>
             <div class="news-videos-container">
                 <div class="video-embed-container">
                     <iframe src="https://player.bilibili.com/player.html?bvid=BV1UurLBoEJK&page=1&high_quality=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
@@ -536,18 +516,3 @@
         &copy; 2023 Kun Lei. Tamplate from <a style="color: white; text-decoration: underline;" href="https://github.com/nicklashansen/nicklashansen.github.io">Nicklas Hansen</a>.
     </div>
 </div>
-
-<script>
-function toggleNews() {
-    var newsMore = document.getElementById('newsMore');
-    var newsToggle = document.getElementById('newsToggle');
-    
-    if (newsMore.style.display === 'none' || newsMore.style.display === '') {
-        newsMore.style.display = 'block';
-        newsToggle.textContent = 'Hidden';
-    } else {
-        newsMore.style.display = 'none';
-        newsToggle.textContent = 'Show more';
-    }
-}
-</script>
