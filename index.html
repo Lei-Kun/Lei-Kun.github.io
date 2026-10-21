@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Kun Lei">
 	<meta property="og:description" content="CS Ph.D. student at Washington University in St. Louis">
-    <meta property="og:image" content="https://Lei-Kun.github.io/my_files/lk.JPG">
+    <meta property="og:image" content="https://Lei-Kun.github.io/my_files/lk_1021.JPG">
 	<meta property="og:url" content="https://Lei-Kun.github.io/">
 	<meta name="twitter:card" content="summary_large_image">
     <link rel="apple-touch-icon" href="my_files/logo.jpg">
@@ -15,21 +15,127 @@
 </head>
 <style>
     .header {
-      background-image: url('https://Lei-Kun.github.io/my_files/background.jpg');
-      background-size: auto 200%; /* 背景图片高度填充容器，宽度自适应 */
-      background-position: center; /* 背景图片在容器中的水平位置居中 */
-      background-repeat: no-repeat; /* 防止背景图片重复 */
-      max-width: none; /* 限制背景图片的最大宽度 */
-      margin: 0 auto; /* 将容器水平居中 */
-      /* 添加其他样式属性，如背景颜色等 */
+      position: relative;
+      isolation: isolate;
+      background-image:
+        linear-gradient(180deg, rgba(42, 22, 8, 0.28), rgba(42, 22, 8, 0.12) 42%, rgba(42, 22, 8, 0.34)),
+        url('my_files/background.jpg');
+      background-size: cover;
+      background-position: center 58%;
+      background-repeat: no-repeat;
+      padding: 28px 0 48px;
+      overflow: hidden;
     }
-  </style>
-<style>
+    .header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 56px;
+      background: linear-gradient(to bottom, rgba(253, 253, 253, 0), #fdfdfd);
+      pointer-events: none;
+    }
+    .header .header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      margin-top: 0;
+    }
+    .header-portrait {
+      width: 460px;
+      max-width: 42%;
+      min-width: 0;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      flex: 0 0 auto;
+      display: block;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      -webkit-mask-image:
+        linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
+        linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
+        linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+      mask-composite: intersect;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+    }
+    .header .header-text {
+      flex: 1;
+      min-width: 0;
+      text-align: left;
+      margin: 0;
+    }
     .header,
     .header-name h1,
     .header-subtitle,
     .header-links a {
-      color: white; /* 设置文本颜色为白色 */
+      color: white;
+    }
+    .header .header-name h1 {
+      font-size: 44px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      margin: 0 0 10px;
+      text-shadow: 0 2px 16px rgba(40, 18, 0, 0.45);
+    }
+    .header .header-subtitle {
+      font-size: 18px;
+      letter-spacing: 0.01em;
+      margin-bottom: 22px;
+      text-shadow: 0 2px 12px rgba(40, 18, 0, 0.4);
+    }
+    .header .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .header .header-links a.btn {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 14px;
+      line-height: 1.4;
+      text-shadow: none;
+      backdrop-filter: blur(8px);
+    }
+    .header .header-links a.btn:hover,
+    .header .header-links a.btn:focus {
+      color: #3a2412;
+      background: rgba(255, 250, 242, 0.92);
+    }
+    @media only screen and (max-width: 860px) {
+      .header {
+        padding: 24px 0 48px;
+      }
+      .header .header-inner {
+        flex-direction: column;
+        gap: 22px;
+      }
+      .header-portrait {
+        width: min(100%, 420px);
+        max-width: 100%;
+      }
+      .header .header-text {
+        text-align: center;
+      }
+      .header .header-name h1 {
+        font-size: 40px;
+      }
+      .header .header-links {
+        justify-content: center;
+      }
     }
   </style>
 <style>
@@ -182,32 +288,23 @@
   </style> -->
   
   <div class="header noselect">
-    <div class="content row">
-        <div class="header-profile-picture" style="
-            background-image: url('my_files/kl.PNG') !important;
-            background-size: cover !important;  /* 确保图片覆盖容器 */
-            background-position: center !important;
-            width: 140px !important;  /* 增大宽度 */
-            height: 140px !important; /* 增大高度 */
-            border-radius: 50% !important;  /* 保持圆形 */
-            ">
-        </div>
+    <div class="content header-inner">
+        <img class="header-portrait" src="my_files/lk_1021.JPG" width="2880" height="2160" alt="Kun Lei">
         <div class="header-text">
             <div class="header-name">
-                <h1>Kun Lei</h1>  
+                <h1>Kun Lei</h1>
             </div>
             <div class="header-subtitle">
-                RL learner for Robotics 
+                RL learner for Robotics
             </div>
             <div class="header-links">
-                <a class="btn" href="mailto:leikun980116@gmail.com">Email</a> /
-                <a class="btn" href="https://scholar.google.com/citations?user=GfUvUacAAAAJ&hl=zh-CN">Google Scholar</a> /
-                <a class="btn" href="https://github.com/Lei-Kun">GitHub</a> /
-                <a class="btn" href="https://twitter.com/kunlei15">Twitter</a> /
-                <a class="btn" href="https://www.zhihu.com/people/lsxk-79">Zhihu</a> /
-                <a class="btn" href="blogs/">Blogs</a> /
+                <a class="btn" href="mailto:leikun980116@gmail.com">Email</a>
+                <a class="btn" href="https://scholar.google.com/citations?user=GfUvUacAAAAJ&hl=zh-CN">Google Scholar</a>
+                <a class="btn" href="https://github.com/Lei-Kun">GitHub</a>
+                <a class="btn" href="https://twitter.com/kunlei15">Twitter</a>
+                <a class="btn" href="https://www.zhihu.com/people/lsxk-79">Zhihu</a>
+                <a class="btn" href="blogs/">Blogs</a>
                 <a class="btn" href="17828196103">微信</a>
-<!--                 <a class="btn" href="my_files/CV_Kun_Lei.pdf">CV</a> -->
             </div>
         </div>
     </div>
