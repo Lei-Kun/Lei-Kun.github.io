@@ -1,0 +1,9 @@
+@techreport{nvidia2026gr00t2,
+  title       = {{GR00T 2}: Scaling Robot Foundation Models for
+                 Generalization, Dexterity, and Adaptation},
+  author      = {{NVIDIA et al.}},
+  institution = {NVIDIA},
+  type        = {Whitepaper},
+  year        = {2026},
+  url         = {https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf}
+}
