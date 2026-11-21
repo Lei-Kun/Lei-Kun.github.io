@@ -1,0 +1,9 @@
+@misc{cao2026granacompositionalrewardmodeling,
+      title={Grana: Compositional Reward Modeling for Long-Horizon Robot Manipulation},
+      author={Zi-ang Cao and Kaiyuan Zheng and Yinzhen Xu and Haonan Duan and Jiasheng Gu and Fengyuan Hu and Nan Zhu and Kun Lei and Kevin Lin and Ruijie Zheng and Shenyuan Gao and Fangqi Zhu and Zhe Zhang and Radha Poovendran and Linxi Fan and Guanzhi Wang and Yuke Zhu},
+      year={2026},
+      eprint={2611.24926},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2611.24926},
+}
